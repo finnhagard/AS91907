@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // change this one according to brand guidelines
+    font-family: sans-serif;
+}
