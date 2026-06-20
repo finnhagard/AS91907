@@ -1,9 +1,11 @@
-function homepage() {
+import "./Homepage.css";
+
+function Homepage() {
     return (
         <main>
-            <h1>Welcome to Vision College Learning Centre</h1>
+            <section className="hero" aria-label="Hero banner" />
         </main>
     );
 }
 
-export default homepage;
+export default Homepage;
