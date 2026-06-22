@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #666060;
+    border-bottom: 2px solid #000;
+}
+
+.footer_nav {
+    display: flex; gap: 40px;
+}
+.footer_nav a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.4rem;
+}

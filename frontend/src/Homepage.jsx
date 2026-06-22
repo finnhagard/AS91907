@@ -3,7 +3,7 @@ import "./Homepage.css";
 function Homepage() {
     return (
         <main>
-            <section className="hero" aria-label="Hero banner" />
+            <section className="hero" aria-label="Hero banner"/>
         </main>
     );
 }
