@@ -4,7 +4,17 @@
 }
 
 body {
-    // change this one according to brand guidelines
+    /* change this one according to brand guidelines */
     font-family: sans-serif;
     background-color: #bcbec0;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
