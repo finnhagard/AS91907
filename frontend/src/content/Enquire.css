@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.enquire_content {
+    padding: 60px 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.enquire_content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.enquire_content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
