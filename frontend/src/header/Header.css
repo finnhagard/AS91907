@@ -18,6 +18,10 @@
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: #000;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.4rem;
+}
+.header_nav a.active {
+    color: #25237A;
+    font-weight: 600;
 }
