@@ -34,7 +34,7 @@
 .course_card {
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 30px;
+    padding: 30px 30px 10px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -54,8 +54,13 @@
 
 .course_card button {
     padding: 10px 20px;
+    display: block;
+    margin: 20px auto;
     width: 40%;
-    margin: 15px auto;
+    border: 1.5px solid;
+    border-radius: 6px;
+    background-color: #4b93bf;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 560;
 }
