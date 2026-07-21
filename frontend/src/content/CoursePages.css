@@ -1,0 +1,53 @@
+.lang_course_hero {
+    width: 100%;
+    height: 300px;
+    background-color: #bcbec0;
+}
+
+.lang_course_content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lang_course_content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.lang_course_content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 0 40px 0;
+}
+
+/* this took a while to figure out. don't tamper, it only breaks. */
+.lang_course_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.lang_course_flyer {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.lang_course_flyer h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+}
+
+.lang_course_flyer p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+}
