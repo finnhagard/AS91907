@@ -3,6 +3,7 @@ import "./Courses.css";
 function Courses() {
     return (
         <main className="courses">
+            <title>Vision College Learning Centre - Courses</title>
             <section className="courses_content">
                 <h1>Our Courses</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae.</p>
