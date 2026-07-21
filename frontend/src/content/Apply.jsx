@@ -52,40 +52,109 @@ function Apply() {
                                 <td><input type="email" placeholder="Email" id="email" name="email"/></td>
                             </tr>
 
-                            {/*phone input*/}
-                            <tr>
-                                <td>Phone number:</td>
-                                <td>
-                                    <input type="tel" size="50" placeholder="Phone"/>
-                                </td>
-                            </tr>
-
                             {/*DOB input*/}
                             <tr>
-                                <td>Date of birth:</td>
                                 <td>
-                                    <input type="date" id="birthday"/>
+                                    <label htmlFor="birthday">Date of Birth:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="date" id="birthday" name="birthday"/>
                                 </td>
                             </tr>
 
                             {/*gender input*/}
                             <tr>
-                                <td>Gender :</td>
                                 <td>
-                                    <input type="radio" name="g"/> Male
-                                    <input type="radio" name="g"/> Female
-                                    <input type="radio" name="g"/> Other
+                                    <label htmlFor="gender">Gender:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="3">
+                                    <input type="radio" name="gender" id="female"/>
+                                    <label htmlFor="female">Female</label>
+                                    <input type="radio" name="gender" id="male"/>
+                                    <label htmlFor="male">Male</label>
+                                    <input type="radio" name="gender" id="other"/>
+                                    <label htmlFor="other">Other</label>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+
+                            {/*current high school*/}
+
+                            {/*year level*/}
+
+                            <tr>
+                                <td>
+                                    <label htmlFor="school">Current high school:</label>
+                                </td>
+                                <td>
+                                    <label htmlFor="year">Current year level:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" name="school" id="school"/>
+                                </td>
+                                <td>
+                                    <select id="year" name="year">
+                                        <option value="">--- Select ---</option>
+                                        <option value="ynine">Year 9</option>
+                                        <option value="yten">Year 10</option>
+                                        <option value="yeleven">Year 11</option>
+                                        <option value="ytwelve">Year 12</option>
+                                        <option value="ythirteen">Year 13</option>
+                                    </select>
                                 </td>
                             </tr>
 
                             {/*course input*/}
                             <tr>
-                                <td>Course :</td>
-                                <td><select>
-                                    <option>Select</option>
-                                    <option>Chinese</option>
-                                    <option>English</option>
-                                </select>
+                                <td>
+                                    <label htmlFor="course">Course:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="course" name="course">
+                                        <option value="">--- Select ---</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="english">English</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            {/*preferred time*/}
+                            <tr>
+                                <td>
+                                    <label htmlFor="time">Preferred time:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="time" name="time">
+                                        <option value="">--- Select ---</option>
+                                        <option value="monafternoon">Monday afternoons</option>
+                                        <option value="wedsafternoon">Wednesday afternoons</option>
+                                        <option value="satmorning">Saturday mornings</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            {/*phone input*/}
+                            <tr>
+                                <td><label htmlFor= "phone">Phone Number:</label> </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="tel" size="20" placeholder="Phone" id="phone" name="phone"/>
                                 </td>
                             </tr>
 
@@ -95,6 +164,9 @@ function Apply() {
                                 <td><textarea cols="48" rows="5"></textarea></td>
                             </tr>
 
+                            {/*emergency contact*/}
+
+                            {/*next of kin*/}
 
                             <tr>
                                 <td colSpan="2" align="center">
