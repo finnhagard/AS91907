@@ -1,23 +1,34 @@
-.courses_hero {
+.lang_course_hero {
     width: 100%;
     height: 300px;
     background-color: #bcbec0;
 }
 
-.courses_content {
+.lang_course_content {
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px 40px;
     font-family: 'Montserrat', sans-serif;
 }
 
-.courses_content h1 {
+.lang_course_content button {
+    padding: 6px 16px;
+    margin-bottom: 15px;
+    color: #333;
+    background-color: #4a99e2;
+    border-radius: 5px;
+    border: solid 1.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.lang_course_content h1 {
     font-size: 2rem;
     font-weight: 700;
     margin: 0 0 20px 0;
 }
 
-.courses_content > p {
+.lang_course_content p {
     font-size: 1rem;
     line-height: 1.8;
     color: #333;
@@ -25,42 +36,29 @@
 }
 
 /* this took a while to figure out. don't tamper, it only breaks. */
-.courses_grid {
+.lang_course_grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.course_card {
+.lang_course_flyer {
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 30px 30px 10px;
+    padding: 30px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.course_card h2 {
+.lang_course_flyer h2 {
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0 0 14px 0;
 }
 
-.course_card p {
+.lang_course_flyer p {
     font-size: 0.9rem;
     line-height: 1.7;
     color: #555;
     margin: 0;
-}
-
-.course_card button {
-    padding: 12px 20px;
-    display: block;
-    margin: 20px auto;
-    width: 45%;
-    border: 1.5px solid;
-    border-radius: 6px;
-    background-color: #4a99e2;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
 }
