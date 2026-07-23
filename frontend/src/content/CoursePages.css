@@ -11,6 +11,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.lang_course_content button {
+    padding: 6px 16px;
+    margin-bottom: 15px;
+    color: #333;
+    background-color: #4a99e2;
+    border-radius: 5px;
+    border: solid 1.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
 .lang_course_content h1 {
     font-size: 2rem;
     font-weight: 700;

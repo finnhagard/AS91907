@@ -53,14 +53,14 @@
 }
 
 .course_card button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     display: block;
     margin: 20px auto;
-    width: 40%;
+    width: 45%;
     border: 1.5px solid;
     border-radius: 6px;
-    background-color: #4b93bf;
+    background-color: #4a99e2;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 560;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
