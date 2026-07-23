@@ -20,16 +20,47 @@
 .multi-column{
     display: inline-block;
     padding-right: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    /*margin-top: 10px;*/
 }
+
 
 h2{
     padding: 15px 0;
     font-size: 1.5rem;
+    margin-top:20px;
 }
 
-.dategenderyear{
+.dropdown{
     /*if wanting to realign with email, 217px!!!!*/
     width: 217px;
     text-align: center;
 }
+input[type=radio]{
+    padding-top: 10px;
+}
+
+.radio-label{
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.form{
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form > div{
+    margin-bottom: 20px;
+    margin-top:20px;
+}
+
+input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus {
+    border: 2px solid #0c4166;
+    outline: none;
+}
+
+/*make all this pretty!!!!!!*/
+
