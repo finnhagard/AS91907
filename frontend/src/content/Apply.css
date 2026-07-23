@@ -16,9 +16,20 @@
     line-height: 1.8;
     color: #333;
 }
-table{
-    table-layout: auto;
+
+.multi-column{
+    display: inline-block;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
-th{
-    text-align: left;
+
+h2{
+    padding: 15px 0;
+    font-size: 1.5rem;
+}
+
+.dategenderyear{
+    /*if wanting to realign with email, 217px!!!!*/
+    width: 217px;
+    text-align: center;
 }
