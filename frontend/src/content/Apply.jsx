@@ -3,6 +3,7 @@ import "./Apply.css";
 function Apply() {
     return (
         <main className="apply">
+            <title>Vision College Learning Centre - Apply</title>
             <section className="apply_content">
                 <h1>Apply</h1>
                 <p>things go here :)</p>
