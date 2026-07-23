@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*lucas hands off my css*/
 
 .apply_content {
     padding: 60px 40px;
@@ -6,13 +7,14 @@
 }
 
 .apply_content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin: 0 0 20px 0;
+    text-align: center;
 }
 
 .apply_content p {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.8;
     color: #333;
 }
@@ -27,13 +29,13 @@
 
 h2{
     padding: 15px 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top:20px;
 }
 
 .dropdown{
     /*if wanting to realign with email, 217px!!!!*/
-    width: 217px;
+    width: 405px;
     text-align: center;
 }
 input[type=radio]{
@@ -42,13 +44,13 @@ input[type=radio]{
 
 .radio-label{
     padding-left: 5px;
-    padding-right: 10px;
+    padding-right: 40px;
     padding-top: 10px;
 }
 
 .form{
     text-align: left;
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -58,8 +60,44 @@ input[type=radio]{
 }
 
 input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus {
-    border: 2px solid #0c4166;
+    border: 2px solid #0095C6;
     outline: none;
+}
+
+input, select{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#address{
+    width: 82.5%;
+}
+
+.coursesdiv{
+    padding-top: 5px;
+}
+
+.submit-button{
+    background-color:  #0095C6;
+    border-radius: 5px;
+    width: 35%;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+label{
+    font-size: 22px;
+}
+
+input[type=text],input[type=tel],input[type=email],select, input[type=date]{
+    padding: 7px;
+}
+
+input[type=date],select{
+    font-size: 13px;
+}
+
+input[type=submit]{
+    font-size: 20px;
 }
 
 /*make all this pretty!!!!!!*/

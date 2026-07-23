@@ -12,33 +12,33 @@ function Apply() {
 
                         <div className="multi-column">
                             <label htmlFor="givenname">Given name(s)*</label><br></br>
-                            <input type="text" id="givenname" name="givenname" size="27" required/>
+                            <input type="text" id="givenname" name="givenname" size="54" required/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="surname">Surname*</label><br></br>
-                            <input type="text" id="surname" name="surname" size="27" required/>
+                            <input type="text" id="surname" name="surname" size="54" required/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="prefname">Preferred name</label><br></br>
-                            <input type="text" id="prefname" name="prefname" size="27"/>
+                            <input type="text" id="prefname" name="prefname" size="54"/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="nsn">NSN (if known)</label><br></br>
-                            <input type="text" id="nsn" name="nsn" size="27" />
-                        </div>
+                            <input type="text" id="nsn" name="nsn" size="54" />
+                        </div><br></br><br></br>
 
                         <div className="multi-column">
                             <label htmlFor="email">Email*</label><br></br>
-                            <input type="email" id="email" name="email" size="27" required/>
+                            <input type="email" id="email" name="email" size="54" required/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="phone">Phone*</label><br></br>
-                            <input type="tel" id="phone" name="phone" size="27" required/>
-                        </div>
+                            <input type="tel" id="phone" name="phone" size="54" required/>
+                        </div><br></br><br></br>
 
                         <div className="multi-column">
                             <label htmlFor="birthday">Date of birth*</label><br></br>
@@ -57,7 +57,7 @@ function Apply() {
 
                         <div className="multi-column">
                           <label htmlFor="school">Current high school*</label><br></br>
-                          <input type="text" id="school" name="school" size="27" required/>
+                          <input type="text" id="school" name="school" size="54" required/>
                         </div>
 
                         <div className="multi-column">
@@ -77,18 +77,21 @@ function Apply() {
 
                         <div>
                             <label htmlFor="course">Course*</label><br></br>
-                            <input type="radio" id="english" name="course" value="English"/>
-                            <label htmlFor="english" className="radio-label">English</label>
-                            <input type="radio" id="chinese" name="course" value="Chinese"/>
-                            <label htmlFor="chinese" className="radio-label">Chinese</label>
-                        </div>
+                            <div className="coursesdiv">
+                                <input type="radio" id="english" name="course" value="English"/>
+                                <label htmlFor="english" className="radio-label">English</label>
+                                <input type="radio" id="chinese" name="course" value="Chinese"/>
+                                <label htmlFor="chinese" className="radio-label">Chinese</label>
+                            </div>
+
+                        </div><br></br>
 
                         <div>
                             <label htmlFor="time">Preferred time*</label><br></br>
                             <select id="time" name="time" className="dropdown" required>
                                 <option value="">--- Select ---</option>
-                                <option value="option1">Monday afternoon</option>
-                                <option value="option2">Wednesday afternoon</option>
+                                <option value="option1">Tuesday afternoon</option>
+                                <option value="option2">Thursday afternoon</option>
                                 <option value="option3">Saturday morning</option>
                             </select>
                         </div>
@@ -97,26 +100,26 @@ function Apply() {
                             <h2>Address</h2>
 
                             <label htmlFor="address">Address*</label><br></br>
-                            <input type="text" id="address" name="address" size="27" required/><br></br><br></br>
+                            <input type="text" id="address" name="address" size="119.6" required/><br></br><br></br>
 
                             <div className="multi-column">
                                 <label htmlFor="suburb">Suburb</label><br></br>
-                                <input type="text" id="suburb" name="suburb" size="27"/>
+                                <input type="text" id="suburb" name="suburb" size="54"/>
                             </div>
 
                             <div className="multi-column">
                                 <label htmlFor="city">City*</label><br></br>
-                                <input type="text" id="city" name="city" size="27" required/>
+                                <input type="text" id="city" name="city" size="54" required/>
                             </div>
 
                             <div className="multi-column">
                                 <label htmlFor="postcode">Post Code</label><br></br>
-                                <input type="text" id="postcode" name="postcode" size="27"/>
+                                <input type="text" id="postcode" name="postcode" size="54"/>
                             </div>
 
                             <div className="multi-column">
                                 <label htmlFor="country">Country*</label><br></br>
-                                <input type="text" id="country" name="country" size="27" required/>
+                                <input type="text" id="country" name="country" size="54" required/>
                             </div>
                         </div>
 
@@ -125,22 +128,22 @@ function Apply() {
 
                         <div className="multi-column">
                             <label htmlFor="contactname">Full name*</label><br></br>
-                            <input type="text" id="contactname" name="contactname" size="35" required/>
+                            <input type="text" id="contactname" name="contactname" size="70" required/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="relationship">Relationship to you*</label><br></br>
-                            <input type="text" id="relationship" name="relationship" size="20" required/>
+                            <input type="text" id="relationship" name="relationship" size="38" required/>
                         </div>
 
-                        <div className>
+                        <div className="multi-column">
                             <label htmlFor="contactemail">Email*</label><br></br>
-                            <input type="email" id="contactemail" name="contactemail" size="27" required/>
+                            <input type="email" id="contactemail" name="contactemail" size="54" required/>
                         </div>
 
-                        <div className>
+                        <div className="multi-column">
                             <label htmlFor="contactphone">Phone*</label><br></br>
-                            <input type="tel" id="contactphone" name="contactphone" size="27" required/>
+                            <input type="tel" id="contactphone" name="contactphone" size="54" required/>
                         </div>
 
 
@@ -148,24 +151,24 @@ function Apply() {
 
                         <div className="multi-column">
                             <label htmlFor="nokname">Full name*</label><br></br>
-                            <input type="text" id="nokname" name="nokname" size="35" required/>
+                            <input type="text" id="nokname" name="nokname" size="70" required/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="nokrelationship">Relationship to you*</label><br></br>
-                            <input type="text" id="nokrelationship" name="nokrelationship" size="20" required/>
+                            <input type="text" id="nokrelationship" name="nokrelationship" size="38" required/>
                         </div>
 
-                        <div>
+                        <div className="multi-column">
                             <label htmlFor="nokemail">Email*</label><br></br>
-                            <input type="email" id="nokemail" name="nokemail" size="27" required/>
+                            <input type="email" id="nokemail" name="nokemail" size="54" required/>
                         </div>
 
-                        <div>
+                        <div className="multi-column">
                             <label htmlFor="nokphone">Phone*</label><br></br>
-                            <input type="tel" id="nokphone" name="nokphone" size="27" required/>
+                            <input type="tel" id="nokphone" name="nokphone" size="54" required/>
                         </div>
-                        <input type="submit" value="Submit"/>
+                        <input type="submit" value="Submit" className="submit-button"/>
                     </form>
                 </div>
             </section>
