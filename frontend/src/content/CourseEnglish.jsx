@@ -9,6 +9,7 @@ function CourseEnglish() {
 
     return (
         <main className="EnglishCourse">
+            <title>Vision College Learning Centre - English Course</title>
             <section className="lang_course_content">
                 <button onClick={backClick}>Back to Courses</button>
                 <h1>Learn English</h1>
