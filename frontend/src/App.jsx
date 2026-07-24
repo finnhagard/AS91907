@@ -4,6 +4,8 @@ import Footer from "./footer/Footer.jsx";
 import Homepage from "./content/Homepage.jsx";
 import AboutUs from "./content/AboutUs.jsx";
 import Courses from "./content/Courses.jsx";
+import CourseChinese from "./content/CourseChinese.jsx";
+import CourseEnglish from "./content/CourseEnglish.jsx";
 import Enquire from "./content/Enquire.jsx";
 import Apply from "./content/Apply.jsx";
 
@@ -15,6 +17,8 @@ function App() {
                 <Route path="/" element={<Homepage />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/courses" element={<Courses />} />
+                <Route path="/courses/chinese" element={<CourseChinese />} />
+                <Route path="/courses/english" element={<CourseEnglish />} />
                 <Route path="/enquire" element={<Enquire />} />
                 <Route path="/apply" element={<Apply />} />
             </Routes>
