@@ -35,7 +35,7 @@ h2{
 
 .dropdown{
     /*if wanting to realign with email, 217px!!!!*/
-    width: 405px;
+    width: 412px;
     text-align: center;
 }
 input[type=radio]{
@@ -50,7 +50,7 @@ input[type=radio]{
 
 .form{
     text-align: left;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -62,6 +62,7 @@ input[type=radio]{
 input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus {
     border: 2px solid #0095C6;
     outline: none;
+    border-radius: 2px;
 }
 
 input, select{
@@ -69,7 +70,7 @@ input, select{
 }
 
 #address{
-    width: 82.5%;
+    width: 94%;
 }
 
 .coursesdiv{
