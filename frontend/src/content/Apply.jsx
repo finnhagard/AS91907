@@ -13,7 +13,7 @@ function FieldError({ name, errors }) {
 }
 
 function Apply() {
-    const [status, setStatus] = useState("idle"); // idle | submitting | success | error
+    const [status, setStatus] = useState("idle"); // states include "idle", "submitting", "success", "error"
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState("");
 
@@ -266,12 +266,7 @@ function Apply() {
                             <p className="form-status error" role="alert">{message}</p>
                         )}
 
-                        <input
-                            type="submit"
-                            value={submitting ? "Submitting..." : "Submit"}
-                            className="submit-button"
-                            disabled={submitting}
-                        />
+                        <input type="submit"  value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
                     </form>
                 </div>
             </section>
