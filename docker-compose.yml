@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: evision-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: evision_dev_pw
+      MYSQL_DATABASE: evision
+    ports:
+      - "3306:3306"
+    volumes:
+      - evision-mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  evision-mysql-data:

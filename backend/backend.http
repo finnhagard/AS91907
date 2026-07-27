@@ -1,6 +1,55 @@
 @backend_HostAddress = http://localhost:5289
 
-GET {{backend_HostAddress}}/weatherforecast/
-Accept: application/json
+### submit
+POST {{backend_HostAddress}}/api/applications
+Content-Type: application/json
+
+{
+  "firstName": "Charles",
+  "lastName": "Babbage",
+  "preferredName": "Charlie",
+  "nsn": "1234567890",
+  "email": "charles@example.com",
+  "phone": "021 555 0100",
+  "dateOfBirth": "2009-12-26",
+  "gender": "male",
+  "currentHighSchool": "Hillcrest High School",
+  "yearLevel": "year13",
+
+  "course": "English",
+  "preferredTime": "saturday-am",
+
+  "addressLine1": "1 Dorset Street",
+  "suburb": "Marylebone",
+  "city": "London",
+  "postcode": "W1U4EE",
+  "country": "United Kingdom",
+
+  "emergencyContactName": "Ada Lovelace",
+  "emergencyContactRelationship": "Aunt",
+  "emergencyContactEmail": "ada@computer.com",
+  "emergencyContactPhone": "021333000",
+
+  "nextOfKinName": "Ada Lovelace",
+  "nextOfKinRelationship": "Aunt",
+  "nextOfKinEmail": "ada@computer.com",
+  "nextOfKinPhone": "021333000"
+}
 
 ###
+POST {{backend_HostAddress}}/api/applications
+Content-Type: application/json
+
+{
+  "firstName": "Charles",
+  "lastName": "",
+  "email": "not-an-email"
+}
+
+### list applications
+GET {{backend_HostAddress}}/api/applications
+Accept: application/json
+
+### fetch application one
+GET {{backend_HostAddress}}/api/applications/1
+Accept: application/json
