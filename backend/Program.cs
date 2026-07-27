@@ -60,7 +60,7 @@
           ("yearLevel",                    "Year level",                   dto.YearLevel),
           ("course",                       "Course",                       dto.Course),
           ("preferredTime",                "Preferred time",               dto.PreferredTime),
-          ("addressLine1",                 "Address",                      dto.AddressLine1),
+          ("address",                      "Address",                      dto.Address),
           ("city",                         "City",                         dto.City),
           ("country",                      "Country",                      dto.Country),
           ("emergencyContactName",         "Emergency contact name",       dto.EmergencyContactName),
@@ -124,7 +124,7 @@
           Course = dto.Course.Trim(),
           PreferredTime = dto.PreferredTime.Trim(),
 
-          AddressLine1 = dto.AddressLine1.Trim(),
+          Address = dto.Address.Trim(),
           Suburb = dto.Suburb?.Trim(),
           City = dto.City.Trim(),
           Postcode = dto.Postcode?.Trim(),
@@ -150,7 +150,8 @@
   })
   .WithName("SubmitApplication");
 
-  // this code is "dangerous" as there is no sort of auth at all! anyone can fetch any application.
+  // this code is "dangerous" as there is no sort of auth at all yet (yay)
+  // anyone can fetch any application
 
   // fetch a single application (used by the 201 Created location, or the admins)
   app.MapGet("/api/applications/{id:int}", async (int id, AppDbContext db) =>

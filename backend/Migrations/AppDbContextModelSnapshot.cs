@@ -30,7 +30,7 @@ namespace backend.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AddressLine1")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");

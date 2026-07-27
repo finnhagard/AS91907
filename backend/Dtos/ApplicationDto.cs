@@ -18,7 +18,7 @@ public record ApplicationDto(
     string Course,
     string PreferredTime,
 
-    string AddressLine1,
+    string Address,
     string? Suburb,
     string City,
     string? Postcode,

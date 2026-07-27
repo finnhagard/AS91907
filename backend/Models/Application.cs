@@ -27,7 +27,7 @@ public class Application {
     [MaxLength(30)] public string Course { get; set; } = string.Empty;
     [MaxLength(30)] public string PreferredTime { get; set; } = string.Empty;
 
-    [MaxLength(250)] public string AddressLine1 { get; set; } = string.Empty;
+    [MaxLength(250)] public string Address { get; set; } = string.Empty;
     [MaxLength(250)] public string? Suburb { get; set; }
     [MaxLength(100)] public string City { get; set; } = string.Empty;
     [MaxLength(250)] public string? Postcode { get; set; }

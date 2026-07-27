@@ -19,7 +19,7 @@ Content-Type: application/json
   "course": "English",
   "preferredTime": "saturday-am",
 
-  "addressLine1": "1 Dorset Street",
+  "address": "1 Dorset Street",
   "suburb": "Marylebone",
   "city": "London",
   "postcode": "W1U4EE",
