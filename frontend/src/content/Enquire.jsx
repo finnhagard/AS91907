@@ -44,12 +44,12 @@ function Enquire() {
                         <div className="multi-column">
                             <label htmlFor="esurname">Surname*</label><br />
                             <input type="text" id="esurname" name="esurname" size="35" required />
-                        </div><br />
+                        </div><br/>
 
                         <div>
                             <label htmlFor="ephone">Phone number*</label><br />
                             <input type="tel" id="e" name="ephone" size="54" required />
-                        </div><br />
+                        </div><br/>
 
                         <div className="multi-column">
                             <label htmlFor="school">Current high school*</label><br />
@@ -66,7 +66,7 @@ function Enquire() {
                                 <option value="year12">Year 12</option>
                                 <option value="year13">Year 13</option>
                             </select>
-                        </div><br />
+                        </div><br/>
 
                         <div>
                             <label htmlFor="ecourse" required>Course of interest*</label><br />
@@ -76,7 +76,7 @@ function Enquire() {
                                 <input type="radio" id="echinese" name="ecourse" value="Chinese" />
                                 <label htmlFor="echinese" className="radio-label">Chinese</label>
                             </div>
-                        </div><br />
+                        </div><br/>
 
                         <div>
                             <label htmlFor="etime">Preferred teaching time*</label><br />
