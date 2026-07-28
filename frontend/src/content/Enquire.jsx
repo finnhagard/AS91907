@@ -69,7 +69,7 @@ function Enquire() {
                         </div><br />
 
                         <div>
-                            <label htmlFor="ecourse">Course of interest*</label><br />
+                            <label htmlFor="ecourse" required>Course of interest*</label><br />
                             <div className="coursesdiv">
                                 <input type="radio" id="e-english" name="ecourse" value="English" />
                                 <label htmlFor="e-english" className="radio-label">English</label>
@@ -86,7 +86,7 @@ function Enquire() {
                                 <option value="option2">Thursday afternoon</option>
                                 <option value="option3">Saturday morning</option>
                             </select>
-                        </div>
+                        </div><br/>
 
                         <div>
                             <label htmlFor="enqnature">Nature of enquiry*</label><br />
@@ -116,9 +116,13 @@ function Enquire() {
                                     {error && <span id="errorMessage" style={{ color: "red" }}><br />⚠️ You must fill out this field</span>}
                                 </div>
                             )}
+                        </div><br/>
+                        <div className="enquirybox">
+                            <label htmlFor="enquiry" required>Enquiry:</label><br/>
+                            <textarea id="enquiry" name="enquiry" rows="8" cols="60"></textarea>
                         </div>
 
-                        <br />
+                        <br/>
                         <button type="submit">Submit Enquiry</button>
                     </form>
                 </div>
