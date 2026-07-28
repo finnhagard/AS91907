@@ -31,6 +31,7 @@ function Enquire() {
 
     return (
         <main className="enquire">
+            <title>Vision College Learning Centre - Enquire</title>
             <section className="enquire_content">
                 <h1>Enquire</h1>
                 <div className="form">
