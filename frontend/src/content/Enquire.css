@@ -33,9 +33,9 @@ h2{
 }
 
 .dropdown{
-    /*if wanting to realign with email, 217px!!!!*/
-    width: 412px;
-    text-align: center;
+    width: 50%;
+    text-align: left;
+    font-size: 16px;
 }
 input[type=radio]{
     padding-top: 10px;
@@ -89,11 +89,11 @@ label{
 }
 
 input[type=text],input[type=tel],input[type=email],select, input[type=date]{
-    padding: 7px;
+    padding: 0;
 }
 
 input[type=date],select{
-    font-size: 13px;
+    font-size: 16px;
 }
 
 input[type=submit]{
@@ -167,6 +167,10 @@ textarea{
     width: 100%;
     box-sizing: border-box;
     text-align: left;
+}
+
+input[type=text],input[type=tel],input[type=email],select{
+    font-size: 16px;
 }
 
 

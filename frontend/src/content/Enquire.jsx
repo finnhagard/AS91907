@@ -38,12 +38,12 @@ function Enquire() {
                     <form onSubmit={handleSubmit}>
                         <div className="multi-column">
                             <label htmlFor="egivenname">Given name(s)*</label><br />
-                            <input type="text" id="egivenname" name="egivenname" size="54" required />
+                            <input type="text" id="egivenname" name="egivenname" size="35" required />
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="esurname">Surname*</label><br />
-                            <input type="text" id="esurname" name="esurname" size="54" required />
+                            <input type="text" id="esurname" name="esurname" size="35" required />
                         </div><br />
 
                         <div>
@@ -53,7 +53,7 @@ function Enquire() {
 
                         <div className="multi-column">
                             <label htmlFor="school">Current high school*</label><br />
-                            <input type="text" id="school" name="school" size="54" required />
+                            <input type="text" id="school" name="school" size="35" required />
                         </div>
 
                         <div className="multi-column">
