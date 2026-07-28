@@ -1,8 +1,5 @@
 import { useState } from "react";
 import "./Apply.css";
-//oi quit messing with my branch
-
-// sorry for tampering!!! :) - finn
 
 const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:5289";
 
