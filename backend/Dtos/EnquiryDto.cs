@@ -14,6 +14,9 @@ public record EnquireDto(
     string Course,
     string PreferredTime,
 
-    string EnquiryNature,
+    bool NatureIsInfo,
+    bool NatureIsPricing,
+    bool NatureIsServices,
+    bool NatureIsOther,
     string? OtherEnquiry,
     string EnquiryText);
