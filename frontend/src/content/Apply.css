@@ -51,6 +51,9 @@ input[type=radio]{
     text-align: left;
     max-width: 900px;
     margin: 0 auto;
+    background-color: yellow;
+    /*investigate css grid as a potential alignment soln*/
+    /*look up "html responsive web design"*/
 }
 
 .form > div{
