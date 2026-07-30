@@ -5,7 +5,7 @@ function Enquire() {
     const [enqNature, setEnqNature] = useState("");
     const [otherSpecify, setOtherSpecify] = useState("");
     const [error, setError] = useState(false);
-
+    {/*
     const handleRadioChange = (e) => {
         const value = e.target.value;
         setEnqNature(value);
@@ -14,11 +14,28 @@ function Enquire() {
             setOtherSpecify("");
         }
     };
+*/}
+/* this be gemini code btw so just check it before relying on it for anything lol*/
+    const handleCheckboxChange = (e) => {
+        const value = e.target.value;
+        const isChecked = e.target.checked;
 
+        let updatedEnqNature;
+        if (isChecked) {
+            updatedEnqNature=[...enqNature, value];
+        } else {
+            updatedEnqNature = enqNature.filter((item) => item !== value);
+            if (value === "Other"){
+                setOtherSpecify("");
+            }
+        }
+        setEnqNature(updatedEnqNature);
+        setError(false);
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (enqNature === "Other" && otherSpecify.trim() === "") {
+        if (enqNature.includes("Other") && otherSpecify.trim() === "") {
             setError(true);
             document.getElementById("otherSpecify").focus();
             return;
