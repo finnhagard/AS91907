@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-.enquire_content p, .enquire_content ul {
+.enquire_content p:not(.subheading), .enquire_content ul {
     font-size: 1rem;
     line-height: 1.8;
     color: #333;
@@ -31,11 +31,11 @@
     text-align: left;
     font-size: 16px;
 }
-input[type=radio]{
+input[type=checkbox]{
     padding-top: 10px;
 }
 
-.radio-label{
+.checkbox-label{
     padding-left: 5px;
     padding-right: 40px;
     padding-top: 10px;
@@ -158,6 +158,14 @@ textarea{
     width: 100%;
     box-sizing: border-box;
     text-align: left;
+}
+
+.subheading{
+    margin-bottom: 20px;
+}
+
+.asterisk{
+    color: #ad0c0c;
 }
 
 
