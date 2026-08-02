@@ -6,12 +6,12 @@ public record EnquireDto(
     //personal details
     string FirstName,
     string LastName,
-    string Email,
     string Phone,
     string CurrentHighSchool,
     string YearLevel,
 
-    string Course,
+    bool CourseIsEnglish,
+    bool CourseIsChinese,
     string PreferredTime,
 
     bool NatureIsInfo,
