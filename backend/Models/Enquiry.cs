@@ -7,7 +7,7 @@ namespace backend.Models;
 
 //MIGRATIONS NOT ADDED
 
-public class Application {
+public class Enquiry {
     public int Id { get; set; }
 
     [MaxLength(50)] public string FirstName { get; set; } = string.Empty;

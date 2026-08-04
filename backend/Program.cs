@@ -13,7 +13,7 @@
   builder.Services.AddDbContext<AppDbContext>(options =>
       options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 
-  // allow the Vite (pronounced veet lucas) dev server to call the API during local development.
+  // allow the Vite (pronounced veet lucas - I KNOW) dev server to call the API during local development.
   const string DevCorsPolicy = "DevCors";
   builder.Services.AddCors(options =>
       options.AddPolicy(DevCorsPolicy, policy =>
@@ -42,6 +42,7 @@
       { "English", "Chinese" };
   var allowedTimes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
       { "tuesday-pm", "thursday-pm", "saturday-am" };
+
   // the same stuff for the enquire form
   var allowedEnquiries = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
       { "Course Information", "Pricing", "Services", "Other" };
@@ -188,7 +189,28 @@
       if (errors.Count > 0)
           return Results.ValidationProblem(errors);
 
-      //MORE HERE
+      var enquiry = new Enquiry
+      {
+          FirstName = dto.FirstName.Trim(),
+          LastName = dto.LastName.Trim(),
+          Phone = dto.Phone.Trim(),
+          CurrentHighSchool = dto.CurrentHighSchool.Trim(),
+          YearLevel = dto.YearLevel.Trim(),
+
+          Course = dto.Course.Trim(),
+          PreferredTime = dto.PreferredTime.Trim(),
+
+          EnquiryNature = dto.EnquiryNature.Trim(),
+          OtherEnquiry = dto.OtherEnquiry?.Trim(),
+          EnquiryText = dto.EnquiryText.Trim(),
+
+          SubmittedAt = DateTime.UtcNow,
+      };
+
+      db.Enquiries.Add(enquiry);
+      await db.SaveChangesAsync();
+
+      return Results.Created($"/api/enquiries/{enquiry.Id}", new { enquiry.Id });
   })
   .WithName("SubmitEnquiry");
 
@@ -201,9 +223,18 @@
           ? Results.Ok(application)
           : Results.NotFound())
   .WithName("GetApplication");
+  //fetch an enquiry
+  app.MapGet("/api/enquiries/{id:int}", async (int id, AppDbContext db) =>
+      await db.Enquiries.FindAsync(id) is { } enquiry
+          ? Results.Ok(enquiry)
+          : Results.NotFound())
+  .WithName("GetEnquiry");
 
   // list recent applications
   app.MapGet("/api/applications", async (AppDbContext db) =>
       await db.Applications.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetApplications");
+  // list recent enquiries
+  app.MapGet("/api/enquiries", async (AppDbContext db) =>
+      await bd.Enquiries.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetEnquiries");
 
   app.Run();

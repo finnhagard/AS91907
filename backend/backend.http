@@ -67,14 +67,10 @@ Content-Type: enquiry/json
     "currentHighSchool": "Gallifreyian Time Lord Academy",
     "yearLevel": "year13",
 
-    "courseIsEnglish": true,
-    "courseIsChinese": true,
+    "course": "Chinese",
     "preferredTime": "tuesday-am",
 
-    "natureIsInfo": true,
-    "natureIsCost": false,
-    "natureIsServices": false,
-    "natureIsOther": true,
+    "enquiryNature": "Other",
     "otherEnquiry": "TARDIS Telepathic Circuits",
     "enquiryText": "I mean, we don't need language courses when the TARDIS can translate for us, do we?"
 }
