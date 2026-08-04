@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-textarea{
-    resize: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
+
 
 .enquire_content {
     padding: 60px 40px;
@@ -168,6 +164,12 @@ button[type=submit] {
 
 .asterisk{
     color: #ad0c0c;
+}
+
+textarea{
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 
