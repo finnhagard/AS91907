@@ -42,6 +42,10 @@
       { "English", "Chinese" };
   var allowedTimes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
       { "tuesday-pm", "thursday-pm", "saturday-am" };
+  // the same stuff for the enquire form
+  var allowedEnquiries = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+      { "Course Information", "Pricing", "Services", "Other" };
+
 
   // submit a student application from the Apply form
   app.MapPost("/api/applications", async (ApplicationDto dto, AppDbContext db) =>
@@ -149,6 +153,44 @@
       return Results.Created($"/api/applications/{application.Id}", new { application.Id });
   })
   .WithName("SubmitApplication");
+
+  app.MapPost("/api/enquiries", async (ApplicationDto dto, AppDbContext db) =>
+  {
+      var errors = new Dictionary<string, string[]>();
+
+      var requiredFields = new (string Field, string Label, string? Value)[]
+      {
+          ("firstName",         "Given Name(s)",        dto.FirstName),
+          ("lastName",          "Surname",              dto.LastName),
+          ("phone",             "Phone",                dto.Phone),
+          ("currentHighSchool", "Current High School",  dto.CurrentHighSchool),
+          ("yearLevel",         "Year level",           dto.YearLevel),
+          ("course",            "Course",               dto.Course),
+          ("preferredTime",     "Preferred time",       dto.PreferredTime),
+          ("enquiryNature",     "Enquiry Nature",       dto.EnquiryNature),
+          ("enquiry",           "Enquiry",              dto.Enquiry),
+      };
+
+      foreach (var (field, label, value) in requiredFields)
+                if (string.IsNullOrWhiteSpace(value))
+                    errors[field] = [$"{label} is required!"];
+
+      // dropdown / radio values have to be ones we actually offer
+      if (!errors.ContainsKey("yearLevel") && !allowedYearLevels.Contains(dto.YearLevel))
+          errors["yearLevel"] = ["Please pick one of the listed options."];
+      if (!errors.ContainsKey("course") && !allowedCourses.Contains(dto.Course))
+          errors["course"] = ["Please choose either English or Chinese."];
+      if (!errors.ContainsKey("preferredTime") && !allowedTimes.Contains(dto.PreferredTime))
+          errors["preferredTime"] = ["Please pick one of the listed options."];
+      if (!errors.ContainsKey("enquiryNature" && !allowedEnquiries.Contains(dto.enquiryNature))
+          errors["enquiryNature"] = ["Please pick one of the listed options."];
+
+      if (errors.Count > 0)
+          return Results.ValidationProblem(errors);
+
+      //MORE HERE
+  })
+  .WithName("SubmitEnquiry");
 
   // this code is "dangerous" as there is no sort of auth at all yet (yay)
   // anyone can fetch any application
