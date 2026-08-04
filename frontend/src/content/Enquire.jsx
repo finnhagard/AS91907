@@ -1,7 +1,17 @@
 import { useState } from "react";
 import "./Enquire.css";
+//finn you BETTER NOT touch this!!!
+
+const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:5289";
+
+// shows the API's validation message for one field, if there is one
+function FieldError({ name, errors })  {
+    if (!errors[name]) return null;
+    return <span className="field-error">{errors[name][0]}</span>;
+}
 
 function Enquire() {
+    //For the other enquiry text box
     const [enqNature, setEnqNature] = useState("");
     const [otherSpecify, setOtherSpecify] = useState("");
     const [error, setError] = useState(false);
@@ -15,18 +25,61 @@ function Enquire() {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    //For submitting
+    const [status, setStatus] = useState("idle"); // states include "idle", "submitting", "success", "error"
+    const [errors, setErrors] = useState({});
+    const [message, setMessage] = useState("");
 
+    const handleSubmit = (event) => {
         if (enqNature === "Other" && otherSpecify.trim() === "") {
             setError(true);
             document.getElementById("otherSpecify").focus();
             return;
         }
 
-        setError(false);
-        alert("Form submitted successfully!");
-        //things go here
+        event.preventDefault();
+        const form = event.target;
+
+        setStatus("submitting");
+        setErrors({});
+        setMessage("");
+
+        //Send null if nothing, otherwise server goes kaboom
+        const payload = {};
+        new FormData(form).forEach((value, key) => {
+            payload[key] = value === "" ? null : value;
+        });
+
+        try
+        {
+            const response = await fetch(`${API_URL}/api/enquiries`, {
+                method: "POST",
+                headers: { "Content-Type": "enquiry/json" },
+                body: JSON.stringify(payload),
+            });
+
+            if (response.status === 201) {
+                form.reset();
+                setStatus("success");
+                setMessage("Your enquiry has been submitted.");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+            }
+
+            if (response.status === 400) {
+                const problem = await response.json();
+                setErrors(problem.errors ?? {});
+                setStatus("error");
+                setMessage("Please check the highlighted fields and try again.");
+                return;
+            }
+
+            setStatus("error");
+            setMessage("Something went wrong on our end! Please try again later.");
+        } catch {
+            setStatus("error");
+            setMessage("Couldn't reach the server! Check your internet connection and try again.");
+        }
     };
 
     return (
