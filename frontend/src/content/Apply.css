@@ -37,6 +37,11 @@ h2{
     width: 412px;
     text-align: center;
 }
+
+.asterisk{
+    color: #ad0c0c;
+}
+
 input[type=radio]{
     padding-top: 10px;
 }

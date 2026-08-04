@@ -78,13 +78,13 @@ function Apply() {
                         <h2>Personal Details</h2>
 
                         <div className="multi-column">
-                            <label htmlFor="firstName">Given name(s)*</label><br></br>
+                            <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="firstName" name="firstName" size="54" required/>
                             <FieldError name="firstName" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="lastName">Surname*</label><br></br>
+                            <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="lastName" name="lastName" size="54" required/>
                             <FieldError name="lastName" errors={errors}/>
                         </div>
@@ -107,7 +107,7 @@ function Apply() {
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="phone">Phone*</label><br></br>
+                            <label htmlFor="phone">Phone<span className="asterisk">*</span></label><br></br>
                             <input type="tel" id="phone" name="phone" size="54" required/>
                             <FieldError name="phone" errors={errors}/>
                         </div><br></br><br></br>
@@ -119,7 +119,7 @@ function Apply() {
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="gender">Gender*</label><br></br>
+                            <label htmlFor="gender">Gender<span className="asterisk">*</span></label><br></br>
                             <select id="gender" name="gender" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="male">Male</option>
@@ -136,7 +136,7 @@ function Apply() {
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="yearLevel">Year level*</label><br></br>
+                            <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br></br>
                             <select id="yearLevel" name="yearLevel" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="year9">Year 9</option>
@@ -188,7 +188,7 @@ function Apply() {
                             </div>
 
                             <div className="multi-column">
-                                <label htmlFor="city">City*</label><br></br>
+                                <label htmlFor="city">City<span className="asterisk">*</span></label><br></br>
                                 <input type="text" id="city" name="city" size="54" required/>
                                 <FieldError name="city" errors={errors}/>
                             </div>
@@ -199,7 +199,7 @@ function Apply() {
                             </div>
 
                             <div className="multi-column">
-                                <label htmlFor="country">Country*</label><br></br>
+                                <label htmlFor="country">Country<span className="asterisk">*</span></label><br></br>
                                 <input type="text" id="country" name="country" size="54" required/>
                                 <FieldError name="country" errors={errors}/>
                             </div>
@@ -209,13 +209,13 @@ function Apply() {
                         <h2>Emergency Contact Details</h2>
 
                         <div className="multi-column">
-                            <label htmlFor="emergencyContactName">Full name*</label><br></br>
+                            <label htmlFor="emergencyContactName">Full name<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="emergencyContactName" name="emergencyContactName" size="70" required/>
                             <FieldError name="emergencyContactName" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="emergencyContactRelationship">Relationship to you*</label><br></br>
+                            <label htmlFor="emergencyContactRelationship">Relationship to you<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" size="38" required/>
                             <FieldError name="emergencyContactRelationship" errors={errors}/>
                         </div>
@@ -236,13 +236,13 @@ function Apply() {
                         <h2>Next of Kin</h2>
 
                         <div className="multi-column">
-                            <label htmlFor="nextOfKinName">Full name*</label><br></br>
+                            <label htmlFor="nextOfKinName">Full name<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="nextOfKinName" name="nextOfKinName" size="70" required/>
                             <FieldError name="nextOfKinName" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="nextOfKinRelationship">Relationship to you*</label><br></br>
+                            <label htmlFor="nextOfKinRelationship">Relationship to you<span className="asterisk">*</span></label><br></br>
                             <input type="text" id="nextOfKinRelationship" name="nextOfKinRelationship" size="38" required/>
                             <FieldError name="nextOfKinRelationship" errors={errors}/>
                         </div>
