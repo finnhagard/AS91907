@@ -7,7 +7,7 @@ function Footer() {
             <div className="footer_columns">
                 <div className="footer_col">
                     <h3>Vision College</h3>
-                    <p>vision college wow text goes here</p>
+                    <p>info goes here</p>
                 </div>
                 <div className="footer_col">
                     <h3>Quick Links</h3>
@@ -22,10 +22,10 @@ function Footer() {
                 <div className="footer_col">
                     <h3>Contact us!</h3>
                     <ul>
-                        <li>123 FiDdLe Street</li>
-                        <li>Evahaghar Place, New Zealand</li>
-                        <li>email@verycooldomainhere.co.nz</li>
-                        <li>000 000 0000</li>
+                        <li>21 Ruakura Road</li>
+                        <li>Hamilton East, Hamilton 3216</li>
+                        <li>info@visionlearningcentre.ac.nz</li>
+                        <li>0800 847 236</li>
                     </ul>
                 </div>
             </div>
