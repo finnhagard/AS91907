@@ -10,13 +10,9 @@ public record EnquireDto(
     string CurrentHighSchool,
     string YearLevel,
 
-    bool CourseIsEnglish,
-    bool CourseIsChinese,
+    string Course,
     string PreferredTime,
 
-    bool NatureIsInfo,
-    bool NatureIsPricing,
-    bool NatureIsServices,
-    bool NatureIsOther,
+    string EnquiryNature,
     string? OtherEnquiry,
     string EnquiryText);
