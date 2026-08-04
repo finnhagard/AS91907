@@ -58,7 +58,7 @@ Accept: application/json
 # enquiry form thingy ig
 ### submit enquiry
 POST {{backend_HostAddress}}/api/enquiries
-Content-Type: enquiry/json
+Content-Type: application/json
 
 {
     "firstName": "The",
@@ -77,11 +77,11 @@ Content-Type: enquiry/json
 
 ### list enquiries
 GET {{backend_HostAddress}}/api/enquiries
-Accept: enquiry/json
+Accept: application/json
 
 ### fetch enquiry one
 GET {{backend_HostAddress}}/api/enquiries/1
-Accept: enquiry/json
+Accept: application/json
 
 #i think this is okay???
 #idk what the second POST was for, so i ignored it

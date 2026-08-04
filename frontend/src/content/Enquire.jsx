@@ -14,12 +14,12 @@ function Enquire() {
     //For the other enquiry text box
     const [enqNature, setEnqNature] = useState("");
     const [otherSpecify, setOtherSpecify] = useState("");
-    const [error, setError] = useState(false);
+    const [radioError, setRadioError] = useState(false);
 
     const handleRadioChange = (e) => {
         const value = e.target.value;
         setEnqNature(value);
-        setError(false);
+        setRadioError(false);
         if (value !== "Other") {
             setOtherSpecify("");
         }
@@ -30,9 +30,9 @@ function Enquire() {
     const [errors, setErrors] = useState({});
     const [message, setMessage] = useState("");
 
-    const handleSubmit = (event) => {
+    async function handleSubmit(event) {
         if (enqNature === "Other" && otherSpecify.trim() === "") {
-            setError(true);
+            setRadioError(true);
             document.getElementById("otherSpecify").focus();
             return;
         }
@@ -54,7 +54,7 @@ function Enquire() {
         {
             const response = await fetch(`${API_URL}/api/enquiries`, {
                 method: "POST",
-                headers: { "Content-Type": "enquiry/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
 
@@ -80,7 +80,9 @@ function Enquire() {
             setStatus("error");
             setMessage("Couldn't reach the server! Check your internet connection and try again.");
         }
-    };
+    }
+
+    const submitting = status === "submitting";
 
     return (
         <main className="enquire">
@@ -92,21 +94,25 @@ function Enquire() {
                         <div className="multi-column">
                             <label htmlFor="egivenname">Given name(s)*</label><br />
                             <input type="text" id="egivenname" name="egivenname" size="35" required />
+                            <FieldError name="egivenname" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
                             <label htmlFor="esurname">Surname*</label><br />
                             <input type="text" id="esurname" name="esurname" size="35" required />
+                            <FieldError name="esurname" errors={errors}/>
                         </div><br/>
 
                         <div>
                             <label htmlFor="ephone">Phone number*</label><br />
                             <input type="tel" id="e" name="ephone" size="54" required />
+                            <FieldError name="ephone" errors={errors}/>
                         </div><br/>
 
                         <div className="multi-column">
                             <label htmlFor="school">Current high school*</label><br />
                             <input type="text" id="school" name="school" size="35" required />
+                            <FieldError name="school" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
@@ -119,6 +125,7 @@ function Enquire() {
                                 <option value="year12">Year 12</option>
                                 <option value="year13">Year 13</option>
                             </select>
+                            <FieldError name="eyear" errors={errors}/>
                         </div><br/>
 
                         <div>
@@ -129,6 +136,7 @@ function Enquire() {
                                 <input type="radio" id="echinese" name="ecourse" value="Chinese" />
                                 <label htmlFor="echinese" className="radio-label">Chinese</label>
                             </div>
+                            <FieldError name="ecourse" errors={errors}/>
                         </div><br/>
 
                         <div>
@@ -139,6 +147,7 @@ function Enquire() {
                                 <option value="option2">Thursday afternoon</option>
                                 <option value="option3">Saturday morning</option>
                             </select>
+                            <FieldError name="etime" errors={errors}/>
                         </div><br/>
 
                         <div>
@@ -156,6 +165,8 @@ function Enquire() {
                             <input type="radio" id="other" name="enqnature" value="Other" checked={enqNature === "Other"} onChange={handleRadioChange} />
                             <label htmlFor="other" className="radio-label">Other</label><br /><br />
 
+                            <FieldError name="enqnature" errors={errors}/>
+
                             {enqNature === "Other" && (
                                 <div id="otherInputContainer">
                                     <label htmlFor="otherSpecify">Please specify: </label>
@@ -166,17 +177,23 @@ function Enquire() {
                                         value={otherSpecify}
                                         onChange={(e) => setOtherSpecify(e.target.value)}
                                     />
-                                    {error && <span id="errorMessage" style={{ color: "red" }}><br />⚠️ You must fill out this field</span>}
+                                    {radioError && <span id="errorMessage" style={{ color: "red" }}><br />⚠️ You must fill out this field</span>}
                                 </div>
                             )}
                         </div><br/>
                         <div className="enquirybox">
                             <label htmlFor="enquiry" required>Enquiry:</label><br/>
                             <textarea id="enquiry" name="enquiry" rows="8" cols="60"></textarea>
+                            <FieldError name="enquiry" errors={errors}/>
                         </div>
 
                         <br/>
-                        <button type="submit">Submit Enquiry</button>
+
+                        {status === "error" && (
+                            <p className="form-status error" role="alert">{message}</p>
+                        )}
+
+                        <input type="submit" value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
                     </form>
                 </div>
             </section>
