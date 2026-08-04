@@ -5,7 +5,7 @@ function Enquire() {
     const [enqNature, setEnqNature] = useState("");
     const [otherSpecify, setOtherSpecify] = useState("");
     const [error, setError] = useState(false);
-    {/*
+
     const handleRadioChange = (e) => {
         const value = e.target.value;
         setEnqNature(value);
@@ -14,24 +14,7 @@ function Enquire() {
             setOtherSpecify("");
         }
     };
-*/}
-/* this be gemini code btw so just check it before relying on it for anything lol*/
-    const handleCheckboxChange = (e) => {
-        const value = e.target.value;
-        const isChecked = e.target.checked;
 
-        let updatedEnqNature;
-        if (isChecked) {
-            updatedEnqNature=[...enqNature, value];
-        } else {
-            updatedEnqNature = enqNature.filter((item) => item !== value);
-            if (value === "Other"){
-                setOtherSpecify("");
-            }
-        }
-        setEnqNature(updatedEnqNature);
-        setError(false);
-    };
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -89,9 +72,9 @@ function Enquire() {
                         <div>
                             <label htmlFor="ecourse" required>Course(s) of interest<span className="asterisk">*</span></label><br />
                             <div className="coursesdiv">
-                                <input type="checkbox" id="e-english" name="ecourse" value="English" />
+                                <input type="radio" id="e-english" name="ecourse" value="English" />
                                 <label htmlFor="e-english" className="radio-label">English</label>
-                                <input type="checkbox" id="echinese" name="ecourse" value="Chinese" />
+                                <input type="radio" id="echinese" name="ecourse" value="Chinese" />
                                 <label htmlFor="echinese" className="radio-label">Chinese</label>
                             </div>
                         </div><br />
@@ -109,17 +92,17 @@ function Enquire() {
                         <div>
                             <label htmlFor="enqnature">Nature of enquiry<span className="asterisk">*</span></label><br />
 
-                            <input type="checkbox" id="courseinfo" name="enqnature" value="Course Information" checked={enqNature === "Course Information"} onChange={handleRadioChange} />
-                            <label htmlFor="courseinfo" className="checkbox-label">Course Information</label><br />
+                            <input type="radio" id="courseinfo" name="enqnature" value="Course Information" checked={enqNature === "Course Information"} onChange={handleRadioChange} />
+                            <label htmlFor="courseinfo" className="radio-label">Course Information</label><br />
 
-                            <input type="checkbox" id="pricing" name="enqnature" value="Pricing" checked={enqNature === "Pricing"} onChange={handleRadioChange} />
-                            <label htmlFor="pricing" className="checkbox-label">Pricing</label><br />
+                            <input type="radio" id="pricing" name="enqnature" value="Pricing" checked={enqNature === "Pricing"} onChange={handleRadioChange} />
+                            <label htmlFor="pricing" className="radio-label">Pricing</label><br />
 
-                            <input type="checkbox" id="services" name="enqnature" value="Services" checked={enqNature === "Services"} onChange={handleRadioChange} />
-                            <label htmlFor="services" className="checkbox-label">Services</label><br />
+                            <input type="radio" id="services" name="enqnature" value="Services" checked={enqNature === "Services"} onChange={handleRadioChange} />
+                            <label htmlFor="services" className="radio-label">Services</label><br />
 
-                            <input type="checkbox" id="other" name="enqnature" value="Other" checked={enqNature === "Other"} onChange={handleRadioChange} />
-                            <label htmlFor="other" className="checkbox-label">Other</label><br /><br />
+                            <input type="radio" id="other" name="enqnature" value="Other" checked={enqNature === "Other"} onChange={handleRadioChange} />
+                            <label htmlFor="other" className="radio-label">Other</label><br /><br />
 
                             {enqNature === "Other" && (
                                 <div id="otherInputContainer">
