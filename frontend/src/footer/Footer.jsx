@@ -6,8 +6,11 @@ function Footer() {
         <footer className="footer">
             <div className="footer_columns">
                 <div className="footer_col">
-                    <h3>Vision College</h3>
-                    <p>info goes here</p>
+                    <h3>Vision College Learning Centre</h3>
+                    <p>The Learning Centre is an initiative of Vision College to assist
+                    secondary school students on their learning pathways, initially in English
+                    and Chinese but with more programmes to be added over time.</p>
+                    <p><a href="https://visioncollege.ac.nz" target="_blank">visioncollege.ac.nz</a></p>
                 </div>
                 <div className="footer_col">
                     <h3>Quick Links</h3>
@@ -30,7 +33,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer_bottom">
-                <p>&copy; Vision College Learning Centre. All rights reserved!</p>
+                <p>&copy; Vision College Learning Centre. All rights reserved.</p>
             </div>
         </footer>
     );
