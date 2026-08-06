@@ -18,12 +18,15 @@
     color: #333;
 }
 
+.left{
+    padding-left: 20px;
+}
+
 .multi-column{
     display: inline-block;
     padding-right: 20px;
     margin-bottom: 20px;
 }
-
 
 h2{
     padding: 15px 0;
@@ -54,7 +57,6 @@ input[type=radio]{
     text-align: left;
     max-width: 900px;
     margin: 0 auto;
-    background-color: yellow;
 }
 
 .form > div{
@@ -73,7 +75,7 @@ input, select{
 }
 
 #address{
-    width: 94%;
+    width: 96%;
 }
 
 .coursesdiv{
@@ -86,6 +88,7 @@ input, select{
     width: 35%;
     padding: 10px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
 label{
