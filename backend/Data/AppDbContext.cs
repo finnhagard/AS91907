@@ -15,12 +15,9 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Application>()
-            .HasIndex(a => a.Email)
-            .HasIndex(a => a.SubmittedAt);
+        modelBuilder.Entity<Application>().HasIndex(a => a.Email);
+        modelBuilder.Entity<Application>().HasIndex(a => a.SubmittedAt);
 
-        modelBuilder.Entity<Enquiry>()
-            .HasIndex(a => a.Email) //Remove this? No email collected. Finn help pls.
-            .HasIndex(a => a.SubmittedAt);
+        modelBuilder.Entity<Enquiry>().HasIndex(a => a.SubmittedAt);
     }
 }

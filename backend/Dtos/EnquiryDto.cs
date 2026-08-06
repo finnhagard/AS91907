@@ -2,7 +2,7 @@ namespace backend.Dtos;
 
 // keep formatting please
 
-public record EnquireDto(
+public record EnquiryDto(
     //personal details
     string FirstName,
     string LastName,

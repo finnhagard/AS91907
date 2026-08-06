@@ -155,7 +155,7 @@
   })
   .WithName("SubmitApplication");
 
-  app.MapPost("/api/enquiries", async (ApplicationDto dto, AppDbContext db) =>
+  app.MapPost("/api/enquiries", async (EnquiryDto dto, AppDbContext db) =>
   {
       var errors = new Dictionary<string, string[]>();
 
@@ -169,7 +169,7 @@
           ("course",            "Course",               dto.Course),
           ("preferredTime",     "Preferred time",       dto.PreferredTime),
           ("enquiryNature",     "Enquiry Nature",       dto.EnquiryNature),
-          ("enquiry",           "Enquiry",              dto.Enquiry),
+          ("enquiryText",       "Enquiry",              dto.EnquiryText),
       };
 
       foreach (var (field, label, value) in requiredFields)
@@ -183,7 +183,7 @@
           errors["course"] = ["Please choose either English or Chinese."];
       if (!errors.ContainsKey("preferredTime") && !allowedTimes.Contains(dto.PreferredTime))
           errors["preferredTime"] = ["Please pick one of the listed options."];
-      if (!errors.ContainsKey("enquiryNature" && !allowedEnquiries.Contains(dto.enquiryNature))
+      if (!errors.ContainsKey("enquiryNature") && !allowedEnquiries.Contains(dto.EnquiryNature))
           errors["enquiryNature"] = ["Please pick one of the listed options."];
 
       if (errors.Count > 0)
@@ -235,6 +235,6 @@
       await db.Applications.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetApplications");
   // list recent enquiries
   app.MapGet("/api/enquiries", async (AppDbContext db) =>
-      await bd.Enquiries.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetEnquiries");
+      await db.Enquiries.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetEnquiries");
 
   app.Run();
