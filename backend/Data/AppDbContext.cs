@@ -10,12 +10,14 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Application> Applications => Set<Application>();
+    public DbSet<Enquiry> Enquiries => Set<Enquiry>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<Application>().HasIndex(a => a.Email);
-
         modelBuilder.Entity<Application>().HasIndex(a => a.SubmittedAt);
+
+        modelBuilder.Entity<Enquiry>().HasIndex(a => a.SubmittedAt);
     }
 }

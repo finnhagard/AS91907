@@ -13,7 +13,7 @@
   builder.Services.AddDbContext<AppDbContext>(options =>
       options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 
-  // allow the Vite (pronounced veet lucas) dev server to call the API during local development.
+  // allow the Vite (pronounced veet lucas - I KNOW) dev server to call the API during local development.
   const string DevCorsPolicy = "DevCors";
   builder.Services.AddCors(options =>
       options.AddPolicy(DevCorsPolicy, policy =>
@@ -42,6 +42,11 @@
       { "English", "Chinese" };
   var allowedTimes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
       { "tuesday-pm", "thursday-pm", "saturday-am" };
+
+  // the same stuff for the enquire form
+  var allowedEnquiries = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+      { "Course Information", "Pricing", "Services", "Other" };
+
 
   // submit a student application from the Apply form
   app.MapPost("/api/applications", async (ApplicationDto dto, AppDbContext db) =>
@@ -150,6 +155,65 @@
   })
   .WithName("SubmitApplication");
 
+  app.MapPost("/api/enquiries", async (EnquiryDto dto, AppDbContext db) =>
+  {
+      var errors = new Dictionary<string, string[]>();
+
+      var requiredFields = new (string Field, string Label, string? Value)[]
+      {
+          ("firstName",         "Given Name(s)",        dto.FirstName),
+          ("lastName",          "Surname",              dto.LastName),
+          ("phone",             "Phone",                dto.Phone),
+          ("currentHighSchool", "Current High School",  dto.CurrentHighSchool),
+          ("yearLevel",         "Year level",           dto.YearLevel),
+          ("course",            "Course",               dto.Course),
+          ("preferredTime",     "Preferred time",       dto.PreferredTime),
+          ("enquiryNature",     "Enquiry Nature",       dto.EnquiryNature),
+          ("enquiryText",       "Enquiry",              dto.EnquiryText),
+      };
+
+      foreach (var (field, label, value) in requiredFields)
+                if (string.IsNullOrWhiteSpace(value))
+                    errors[field] = [$"{label} is required!"];
+
+      // dropdown / radio values have to be ones we actually offer
+      if (!errors.ContainsKey("yearLevel") && !allowedYearLevels.Contains(dto.YearLevel))
+          errors["yearLevel"] = ["Please pick one of the listed options."];
+      if (!errors.ContainsKey("course") && !allowedCourses.Contains(dto.Course))
+          errors["course"] = ["Please choose either English or Chinese."];
+      if (!errors.ContainsKey("preferredTime") && !allowedTimes.Contains(dto.PreferredTime))
+          errors["preferredTime"] = ["Please pick one of the listed options."];
+      if (!errors.ContainsKey("enquiryNature") && !allowedEnquiries.Contains(dto.EnquiryNature))
+          errors["enquiryNature"] = ["Please pick one of the listed options."];
+
+      if (errors.Count > 0)
+          return Results.ValidationProblem(errors);
+
+      var enquiry = new Enquiry
+      {
+          FirstName = dto.FirstName.Trim(),
+          LastName = dto.LastName.Trim(),
+          Phone = dto.Phone.Trim(),
+          CurrentHighSchool = dto.CurrentHighSchool.Trim(),
+          YearLevel = dto.YearLevel.Trim(),
+
+          Course = dto.Course.Trim(),
+          PreferredTime = dto.PreferredTime.Trim(),
+
+          EnquiryNature = dto.EnquiryNature.Trim(),
+          OtherEnquiry = dto.OtherEnquiry?.Trim(),
+          EnquiryText = dto.EnquiryText.Trim(),
+
+          SubmittedAt = DateTime.UtcNow,
+      };
+
+      db.Enquiries.Add(enquiry);
+      await db.SaveChangesAsync();
+
+      return Results.Created($"/api/enquiries/{enquiry.Id}", new { enquiry.Id });
+  })
+  .WithName("SubmitEnquiry");
+
   // this code is "dangerous" as there is no sort of auth at all yet (yay)
   // anyone can fetch any application
 
@@ -159,9 +223,18 @@
           ? Results.Ok(application)
           : Results.NotFound())
   .WithName("GetApplication");
+  //fetch an enquiry
+  app.MapGet("/api/enquiries/{id:int}", async (int id, AppDbContext db) =>
+      await db.Enquiries.FindAsync(id) is { } enquiry
+          ? Results.Ok(enquiry)
+          : Results.NotFound())
+  .WithName("GetEnquiry");
 
   // list recent applications
   app.MapGet("/api/applications", async (AppDbContext db) =>
       await db.Applications.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetApplications");
+  // list recent enquiries
+  app.MapGet("/api/enquiries", async (AppDbContext db) =>
+      await db.Enquiries.OrderByDescending(a => a.SubmittedAt).ToListAsync()).WithName("GetEnquiries");
 
   app.Run();

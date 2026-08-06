@@ -53,3 +53,35 @@ Accept: application/json
 ### fetch application one
 GET {{backend_HostAddress}}/api/applications/1
 Accept: application/json
+
+
+# enquiry form thingy ig
+### submit enquiry
+POST {{backend_HostAddress}}/api/enquiries
+Content-Type: application/json
+
+{
+    "firstName": "The",
+    "lastName": "Doctor",
+    "phone": "07700 900461",
+    "currentHighSchool": "Gallifreyian Time Lord Academy",
+    "yearLevel": "year13",
+
+    "course": "Chinese",
+    "preferredTime": "tuesday-am",
+
+    "enquiryNature": "Other",
+    "otherEnquiry": "TARDIS Circuits",
+    "enquiryText": "I mean, we don't need language courses when the TARDIS can translate for us, do we?"
+}
+
+### list enquiries
+GET {{backend_HostAddress}}/api/enquiries
+Accept: application/json
+
+### fetch enquiry one
+GET {{backend_HostAddress}}/api/enquiries/1
+Accept: application/json
+
+#i think this is okay???
+#idk what the second POST was for, so i ignored it
