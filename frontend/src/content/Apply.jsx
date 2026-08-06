@@ -101,7 +101,7 @@ function Apply() {
                         </div><br></br><br></br>
 
                         <div className="multi-column left">
-                            <label htmlFor="email">Email*</label><br></br>
+                            <label htmlFor="email">Email<span className="asterisk">*</span></label><br></br>
                             <input type="email" id="email" name="email" size="54" required/>
                             <FieldError name="email" errors={errors}/>
                         </div>
@@ -113,7 +113,7 @@ function Apply() {
                         </div><br></br><br></br>
 
                         <div className="multi-column left">
-                            <label htmlFor="dateOfBirth">Date of birth*</label><br></br>
+                            <label htmlFor="dateOfBirth">Date of birth<span className="asterisk">*</span></label><br></br>
                             <input type="date" id="dateOfBirth" name="dateOfBirth" className="dropdown" required/>
                             <FieldError name="dateOfBirth" errors={errors}/>
                         </div>
@@ -130,7 +130,7 @@ function Apply() {
                         </div>
 
                         <div className="multi-column left">
-                          <label htmlFor="currentHighSchool">Current high school*</label><br></br>
+                          <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br></br>
                           <input type="text" id="currentHighSchool" name="currentHighSchool" size="54" required/>
                           <FieldError name="currentHighSchool" errors={errors}/>
                         </div>
@@ -153,7 +153,7 @@ function Apply() {
 
                         <div className="left">
                             <fieldset className="radio-group">
-                                <legend>Course*</legend>
+                                <legend>Course<span className="asterisk">*</span></legend>
                                 <div className="coursesdiv">
                                     <input type="radio" id="english" name="course" value="English" required/>
                                     <label htmlFor="english" className="radio-label">English</label>
@@ -165,7 +165,7 @@ function Apply() {
                         </div><br/>
 
                         <div className="left">
-                            <label htmlFor="preferredTime">Preferred time*</label><br></br>
+                            <label htmlFor="preferredTime">Preferred time<span className="asterisk">*</span></label><br></br>
                             <select id="preferredTime" name="preferredTime" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="tuesday-pm">Tuesday afternoon</option>
@@ -179,7 +179,7 @@ function Apply() {
                             <h2 className="left">Address</h2>
 
                             <div className="left">
-                                <label htmlFor="address">Address*</label><br></br>
+                                <label htmlFor="address">Address<span className="asterisk">*</span></label><br></br>
                                 <input type="text" id="address" name="address" required/>
                                 <FieldError name="address" errors={errors}/>
                             </div><br/><br/>
@@ -223,13 +223,13 @@ function Apply() {
                         </div>
 
                         <div className="multi-column left">
-                            <label htmlFor="emergencyContactEmail">Email*</label><br></br>
+                            <label htmlFor="emergencyContactEmail">Email<span className="asterisk">*</span></label><br></br>
                             <input type="email" id="emergencyContactEmail" name="emergencyContactEmail" size="54" required/>
                             <FieldError name="emergencyContactEmail" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="emergencyContactPhone">Phone*</label><br></br>
+                            <label htmlFor="emergencyContactPhone">Phone<span className="asterisk">*</span></label><br></br>
                             <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" size="54" required/>
                             <FieldError name="emergencyContactPhone" errors={errors}/>
                         </div>
@@ -250,13 +250,13 @@ function Apply() {
                         </div>
 
                         <div className="multi-column left">
-                            <label htmlFor="nextOfKinEmail">Email*</label><br></br>
+                            <label htmlFor="nextOfKinEmail">Email<span className="asterisk">*</span></label><br></br>
                             <input type="email" id="nextOfKinEmail" name="nextOfKinEmail" size="54" required/>
                             <FieldError name="nextOfKinEmail" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="nextOfKinPhone">Phone*</label><br></br>
+                            <label htmlFor="nextOfKinPhone">Phone<span className="asterisk">*</span></label><br></br>
                             <input type="tel" id="nextOfKinPhone" name="nextOfKinPhone" size="54" required/>
                             <FieldError name="nextOfKinPhone" errors={errors}/>
                         </div>
