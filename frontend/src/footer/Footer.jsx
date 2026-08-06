@@ -5,7 +5,7 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="footer_columns">
-                <div className="footer_col">
+                <div className="footer_col footer_blurb" id="footer_blurb">
                     <h3>Vision College Learning Centre</h3>
                     <p>The Learning Centre is an initiative of Vision College to assist
                     secondary school students on their learning pathways, initially in English
@@ -27,7 +27,7 @@ function Footer() {
                     <ul>
                         <li>21 Ruakura Road</li>
                         <li>Hamilton East, Hamilton 3216</li>
-                        <li>info@visionlearningcentre.ac.nz</li>
+                        <li><a href="mailto:info@visionlearningcentre.ac.nz">info@visionlearningcentre.ac.nz</a></li>
                         <li>0800 847 236</li>
                     </ul>
                 </div>
