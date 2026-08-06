@@ -31,14 +31,14 @@ function Enquire() {
     const [message, setMessage] = useState("");
 
     async function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+
         if (enqNature === "Other" && otherSpecify.trim() === "") {
             setRadioError(true);
             document.getElementById("otherSpecify").focus();
             return;
         }
-
-        event.preventDefault();
-        const form = event.target;
 
         setStatus("submitting");
         setErrors({});
@@ -89,6 +89,11 @@ function Enquire() {
             <title>Vision College Learning Centre - Enquire</title>
             <section className="enquire_content">
                 <h1>Enquire</h1>
+
+                {status === "success" && (
+                    <p className="form-status success" role="status">{message}</p>
+                )}
+
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <div className="multi-column">
