@@ -110,7 +110,7 @@ function Enquire() {
 
                         <div className="multi-column left">
                             <label htmlFor="enqEmail">Email<span className="asterisk">*</span></label><br></br>
-                            <input type="email" id="enqEmail" name="enqEmail" size="35" required/>
+                            <input type="email" id="enqEmail" name="email" size="35" required/>
                             <FieldError name="email" errors={errors}/>
                         </div>
 

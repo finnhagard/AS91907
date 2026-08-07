@@ -63,6 +63,7 @@ Content-Type: application/json
 {
     "firstName": "The",
     "lastName": "Doctor",
+    "email": "timeandrelativedimensioninspace@tardis.com",
     "phone": "07700 900461",
     "currentHighSchool": "Gallifreyian Time Lord Academy",
     "yearLevel": "year13",

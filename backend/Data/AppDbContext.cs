@@ -18,6 +18,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Application>().HasIndex(a => a.Email);
         modelBuilder.Entity<Application>().HasIndex(a => a.SubmittedAt);
 
+        modelBuilder.Entity<Enquiry>().HasIndex(a => a.Email);
         modelBuilder.Entity<Enquiry>().HasIndex(a => a.SubmittedAt);
     }
 }

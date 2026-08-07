@@ -163,6 +163,7 @@
       {
           ("firstName",         "Given Name(s)",        dto.FirstName),
           ("lastName",          "Surname",              dto.LastName),
+          ("email",             "Email",                dto.Email),
           ("phone",             "Phone",                dto.Phone),
           ("currentHighSchool", "Current High School",  dto.CurrentHighSchool),
           ("yearLevel",         "Year level",           dto.YearLevel),
@@ -175,6 +176,10 @@
       foreach (var (field, label, value) in requiredFields)
                 if (string.IsNullOrWhiteSpace(value))
                     errors[field] = [$"{label} is required!"];
+
+      // email format (only if it was actually filled in)
+      if (!errors.ContainsKey("email") && !MailAddress.TryCreate(dto.Email, out _))
+          errors["email"] = ["The provided email does not seem to be valid."];
 
       // dropdown / radio values have to be ones we actually offer
       if (!errors.ContainsKey("yearLevel") && !allowedYearLevels.Contains(dto.YearLevel))
@@ -193,6 +198,7 @@
       {
           FirstName = dto.FirstName.Trim(),
           LastName = dto.LastName.Trim(),
+          Email = dto.Email.Trim(),
           Phone = dto.Phone.Trim(),
           CurrentHighSchool = dto.CurrentHighSchool.Trim(),
           YearLevel = dto.YearLevel.Trim(),
