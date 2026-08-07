@@ -96,50 +96,56 @@ function Enquire() {
 
                 <div className="form">
                     <form onSubmit={handleSubmit}>
-                        <div className="multi-column left">
-                            <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br />
-                            <input type="text" id="egivenname" name="firstName" size="35" required />
-                            <FieldError name="firstName" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br />
+                                <input type="text" id="egivenname" name="firstName" required />
+                                <FieldError name="firstName" errors={errors}/>
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br />
+                                <input type="text" id="esurname" name="lastName" required />
+                                <FieldError name="lastName" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br />
-                            <input type="text" id="esurname" name="lastName" size="35" required />
-                            <FieldError name="lastName" errors={errors}/>
-                        </div><br/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="enqEmail">Email<span className="asterisk">*</span></label><br />
+                                <input type="email" id="enqEmail" name="email" required />
+                                <FieldError name="email" errors={errors}/>
+                            </div>
 
-                        <div className="multi-column left">
-                            <label htmlFor="enqEmail">Email<span className="asterisk">*</span></label><br></br>
-                            <input type="email" id="enqEmail" name="email" size="35" required/>
-                            <FieldError name="email" errors={errors}/>
+                            <div className="field">
+                                <label htmlFor="phone">Phone number<span className="asterisk">*</span></label><br />
+                                <input type="tel" id="e" name="phone" required />
+                                <FieldError name="phone" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="phone">Phone number<span className="asterisk">*</span></label><br />
-                            <input type="tel" id="e" name="phone" size="35" required />
-                            <FieldError name="phone" errors={errors}/>
-                        </div><br/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br />
+                                <input type="text" id="school" name="currentHighSchool" required />
+                                <FieldError name="currentHighSchool" errors={errors}/>
+                            </div>
 
-                        <div className="multi-column left">
-                            <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br />
-                            <input type="text" id="school" name="currentHighSchool" size="35" required />
-                            <FieldError name="currentHighSchool" errors={errors}/>
+                            <div className="field">
+                                <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br />
+                                <select id="eyear" name="yearLevel" className="dropdown" required>
+                                    <option value="">--- Select ---</option>
+                                    <option value="year9">Year 9</option>
+                                    <option value="year10">Year 10</option>
+                                    <option value="year11">Year 11</option>
+                                    <option value="year12">Year 12</option>
+                                    <option value="year13">Year 13</option>
+                                </select>
+                                <FieldError name="yearLevel" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br />
-                            <select id="eyear" name="yearLevel" className="dropdown" required>
-                                <option value="">--- Select ---</option>
-                                <option value="year9">Year 9</option>
-                                <option value="year10">Year 10</option>
-                                <option value="year11">Year 11</option>
-                                <option value="year12">Year 12</option>
-                                <option value="year13">Year 13</option>
-                            </select>
-                            <FieldError name="yearLevel" errors={errors}/>
-                        </div><br/>
-
-                        <div className="left">
+                        <div className="field">
                             <label htmlFor="course" required>Course of interest<span className="asterisk">*</span></label><br />
                             <div className="coursesdiv">
                                 <input type="radio" id="e-english" name="course" value="English" />
@@ -148,9 +154,9 @@ function Enquire() {
                                 <label htmlFor="echinese" className="radio-label">Chinese</label>
                             </div>
                             <FieldError name="course" errors={errors}/>
-                        </div><br/>
+                        </div>
 
-                        <div className="left">
+                        <div className="field">
                             <label htmlFor="preferredTime">Preferred teaching time<span className="asterisk">*</span></label><br />
                             <select id="etime" name="preferredTime" className="dropdown" required>
                                 <option value="">--- Select ---</option>
@@ -159,9 +165,9 @@ function Enquire() {
                                 <option value="saturday-am">Saturday morning</option>
                             </select>
                             <FieldError name="preferredTime" errors={errors}/>
-                        </div><br/>
+                        </div>
 
-                        <div className="left">
+                        <div className="field">
                             <label htmlFor="enquiryNature">Nature of enquiry<span className="asterisk">*</span></label><br />
 
                             <input type="radio" id="courseinfo" name="enquiryNature" value="Course Information" checked={enqNature === "Course Information"} onChange={handleRadioChange} />
@@ -191,10 +197,10 @@ function Enquire() {
                                     {radioError && <span id="errorMessage" style={{ color: "red" }}><br />⚠️ You must fill out this field</span>}
                                 </div>
                             )}
-                        </div><br/>
-                        <div className="enquirybox left">
+                        </div>
+                        <div className="field">
                             <label htmlFor="enquiryText" required>Enquiry<span className="asterisk">*</span></label><br/>
-                            <textarea id="enquiry" name="enquiryText" rows="8" cols="60"></textarea>
+                            <textarea id="enquiry" name="enquiryText" rows="8"></textarea>
                             <FieldError name="enquiryText" errors={errors}/>
                         </div>
 
