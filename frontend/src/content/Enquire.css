@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .left{
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 .enquire_content {
@@ -47,13 +47,14 @@ input[type=radio]{
 
 .form{
     text-align: left;
-    width: 755px;
+    width: 750px;
     margin: 0 auto;
 }
 
 .form > div{
     margin-bottom: 20px;
     margin-top:20px;
+    margin-left: 0;
 }
 
 input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus, textarea:focus {
