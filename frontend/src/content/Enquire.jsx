@@ -108,7 +108,13 @@ function Enquire() {
                             <FieldError name="lastName" errors={errors}/>
                         </div><br/>
 
-                        <div className="left">
+                        <div className="multi-column left">
+                            <label htmlFor="enqEmail">Email<span className="asterisk">*</span></label><br></br>
+                            <input type="email" id="enqEmail" name="email" size="35" required/>
+                            <FieldError name="email" errors={errors}/>
+                        </div>
+
+                        <div className="multi-column">
                             <label htmlFor="phone">Phone number<span className="asterisk">*</span></label><br />
                             <input type="tel" id="e" name="phone" size="35" required />
                             <FieldError name="phone" errors={errors}/>

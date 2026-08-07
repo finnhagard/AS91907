@@ -12,6 +12,7 @@ public class Enquiry {
 
     [MaxLength(50)] public string FirstName { get; set; } = string.Empty;
     [MaxLength(50)] public string LastName { get; set; } = string.Empty;
+    [MaxLength(320)] public string Email { get; set; } = string.Empty;
     [MaxLength(25)] public string Phone { get; set; } = string.Empty;
     [MaxLength(100)] public string CurrentHighSchool { get; set; } = string.Empty;
     [MaxLength(10)] public string YearLevel { get; set; } = string.Empty;
