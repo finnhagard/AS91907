@@ -97,31 +97,31 @@ function Enquire() {
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <div className="multi-column left">
-                            <label htmlFor="firstName">Given name(s)*</label><br />
+                            <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br />
                             <input type="text" id="egivenname" name="firstName" size="35" required />
                             <FieldError name="firstName" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="lastName">Surname*</label><br />
+                            <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br />
                             <input type="text" id="esurname" name="lastName" size="35" required />
                             <FieldError name="lastName" errors={errors}/>
                         </div><br/>
 
                         <div className="left">
-                            <label htmlFor="phone">Phone number*</label><br />
+                            <label htmlFor="phone">Phone number<span className="asterisk">*</span></label><br />
                             <input type="tel" id="e" name="phone" size="35" required />
                             <FieldError name="phone" errors={errors}/>
                         </div><br/>
 
                         <div className="multi-column left">
-                            <label htmlFor="currentHighSchool">Current high school*</label><br />
+                            <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br />
                             <input type="text" id="school" name="currentHighSchool" size="35" required />
                             <FieldError name="currentHighSchool" errors={errors}/>
                         </div>
 
                         <div className="multi-column">
-                            <label htmlFor="yearLevel">Year level*</label><br />
+                            <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br />
                             <select id="eyear" name="yearLevel" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="year9">Year 9</option>
@@ -134,7 +134,7 @@ function Enquire() {
                         </div><br/>
 
                         <div className="left">
-                            <label htmlFor="course" required>Course of interest*</label><br />
+                            <label htmlFor="course" required>Course of interest<span className="asterisk">*</span></label><br />
                             <div className="coursesdiv">
                                 <input type="radio" id="e-english" name="course" value="English" />
                                 <label htmlFor="e-english" className="radio-label">English</label>
@@ -145,7 +145,7 @@ function Enquire() {
                         </div><br/>
 
                         <div className="left">
-                            <label htmlFor="preferredTime">Preferred teaching time*</label><br />
+                            <label htmlFor="preferredTime">Preferred teaching time<span className="asterisk">*</span></label><br />
                             <select id="etime" name="preferredTime" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="tuesday-pm">Tuesday afternoon</option>
@@ -156,7 +156,7 @@ function Enquire() {
                         </div><br/>
 
                         <div className="left">
-                            <label htmlFor="enquiryNature">Nature of enquiry*</label><br />
+                            <label htmlFor="enquiryNature">Nature of enquiry<span className="asterisk">*</span></label><br />
 
                             <input type="radio" id="courseinfo" name="enquiryNature" value="Course Information" checked={enqNature === "Course Information"} onChange={handleRadioChange} />
                             <label htmlFor="courseinfo" className="radio-label">Course Information</label><br />
@@ -187,7 +187,7 @@ function Enquire() {
                             )}
                         </div><br/>
                         <div className="enquirybox left">
-                            <label htmlFor="enquiryText" required>Enquiry:</label><br/>
+                            <label htmlFor="enquiryText" required>Enquiry<span className="asterisk">*</span></label><br/>
                             <textarea id="enquiry" name="enquiryText" rows="8" cols="60"></textarea>
                             <FieldError name="enquiryText" errors={errors}/>
                         </div>
