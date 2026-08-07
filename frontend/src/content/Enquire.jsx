@@ -96,7 +96,7 @@ function Enquire() {
 
                 <div className="form">
                     <form onSubmit={handleSubmit}>
-                        <div className="multi-column">
+                        <div className="multi-column left">
                             <label htmlFor="firstName">Given name(s)*</label><br />
                             <input type="text" id="egivenname" name="firstName" size="35" required />
                             <FieldError name="firstName" errors={errors}/>
@@ -108,13 +108,13 @@ function Enquire() {
                             <FieldError name="lastName" errors={errors}/>
                         </div><br/>
 
-                        <div>
+                        <div className="left">
                             <label htmlFor="phone">Phone number*</label><br />
-                            <input type="tel" id="e" name="phone" size="54" required />
+                            <input type="tel" id="e" name="phone" size="35" required />
                             <FieldError name="phone" errors={errors}/>
                         </div><br/>
 
-                        <div className="multi-column">
+                        <div className="multi-column left">
                             <label htmlFor="currentHighSchool">Current high school*</label><br />
                             <input type="text" id="school" name="currentHighSchool" size="35" required />
                             <FieldError name="currentHighSchool" errors={errors}/>
@@ -133,7 +133,7 @@ function Enquire() {
                             <FieldError name="yearLevel" errors={errors}/>
                         </div><br/>
 
-                        <div>
+                        <div className="left">
                             <label htmlFor="course" required>Course of interest*</label><br />
                             <div className="coursesdiv">
                                 <input type="radio" id="e-english" name="course" value="English" />
@@ -144,7 +144,7 @@ function Enquire() {
                             <FieldError name="course" errors={errors}/>
                         </div><br/>
 
-                        <div>
+                        <div className="left">
                             <label htmlFor="preferredTime">Preferred teaching time*</label><br />
                             <select id="etime" name="preferredTime" className="dropdown" required>
                                 <option value="">--- Select ---</option>
@@ -155,7 +155,7 @@ function Enquire() {
                             <FieldError name="preferredTime" errors={errors}/>
                         </div><br/>
 
-                        <div>
+                        <div className="left">
                             <label htmlFor="enquiryNature">Nature of enquiry*</label><br />
 
                             <input type="radio" id="courseinfo" name="enquiryNature" value="Course Information" checked={enqNature === "Course Information"} onChange={handleRadioChange} />
@@ -186,7 +186,7 @@ function Enquire() {
                                 </div>
                             )}
                         </div><br/>
-                        <div className="enquirybox">
+                        <div className="enquirybox left">
                             <label htmlFor="enquiryText" required>Enquiry:</label><br/>
                             <textarea id="enquiry" name="enquiryText" rows="8" cols="60"></textarea>
                             <FieldError name="enquiryText" errors={errors}/>
@@ -198,7 +198,9 @@ function Enquire() {
                             <p className="form-status error" role="alert">{message}</p>
                         )}
 
-                        <input type="submit" value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
+                        <div className="submit-container">
+                            <input type="submit" value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
+                        </div>
                     </form>
                 </div>
             </section>
