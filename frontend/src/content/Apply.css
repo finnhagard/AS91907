@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-/*lucas hands off my css*/
 
 .apply_content {
     padding: 60px 40px;
@@ -19,13 +18,15 @@
     color: #333;
 }
 
+.left{
+    padding-left: 20px;
+}
+
 .multi-column{
     display: inline-block;
     padding-right: 20px;
     margin-bottom: 20px;
-    /*margin-top: 10px;*/
 }
-
 
 h2{
     padding: 15px 0;
@@ -34,10 +35,14 @@ h2{
 }
 
 .dropdown{
-    /*if wanting to realign with email, 217px!!!!*/
     width: 412px;
     text-align: center;
 }
+
+.asterisk{
+    color: #ad0c0c;
+}
+
 input[type=radio]{
     padding-top: 10px;
 }
@@ -70,7 +75,7 @@ input, select{
 }
 
 #address{
-    width: 94%;
+    width: 96%;
 }
 
 .coursesdiv{
@@ -83,6 +88,7 @@ input, select{
     width: 35%;
     padding: 10px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
 label{
@@ -146,5 +152,4 @@ input[type=submit]{
     padding: 0;
 }
 
-/*make all this pretty!!!!!!*/
 

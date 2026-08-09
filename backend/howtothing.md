@@ -2,8 +2,8 @@
 
 1) install docker!!!!
 2) docker compose up -d *(this will start mysql)*
-3) cd backend && dotnet ef database update *(create/upgrade the table)*
-4) dotnet run *(starts the api)*
+3) dotnet ef database update --project backend *(create/upgrade the table)*
+4) dotnet run --project backend *(starts the api)*
 5) npm run dev (make sure you in the frontend folder while doing this)
 
 **after pulling someone else's work, if `backend/Migrations/` has new files in it, run
