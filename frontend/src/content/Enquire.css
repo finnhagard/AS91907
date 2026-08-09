@@ -11,7 +11,7 @@
     margin: 0 0 20px 0;
 }
 
-.enquire_content p {
+.enquire_content p, .enquire_content ul {
     font-size: 1rem;
     line-height: 1.8;
     color: #333;
