@@ -16,16 +16,15 @@ function Courses() {
             <title>Vision College Learning Centre - Courses</title>
             <section className="courses_content">
                 <h1>Our Courses</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae.</p>
                 <div className="courses_grid">
                     <div className="course_card">
-                        <h2>Consectetur Course (English)</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                        <h2>English</h2>
+                        <p>Helping students strengthen reading, writing, listening, and speaking skills while working towards essential English credits.<br/><br/></p>
                         <button onClick={englishClick}>More Info</button>
                     </div>
                     <div className="course_card">
-                        <h2>Dolor Sit Amet (Chinese)</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+                        <h2>Chinese</h2>
+                        <p>Whether you are learning Chinese for work, study, or personal growth, our courses are designed to help you communicate confidently in real-life situations. </p>
                         <button onClick={chineseClick}>More Info</button>
                     </div>
                 </div>
