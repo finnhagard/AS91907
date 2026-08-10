@@ -76,6 +76,7 @@ function Apply() {
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <h2 className="left">Personal Details</h2>
+                        <h3><span className="asterisk">*</span> indicates a required field.</h3>
 
                         <div className="multi-column left">
                             <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br></br>
