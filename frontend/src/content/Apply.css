@@ -144,24 +144,24 @@ label{
 }
 
 .radio-group legend {
-    font-size: 22px;
+    font-size: 21px;
     padding: 0;
 }
 
 @media (max-width: 480px) {
     .apply_content {
-        padding: 40px 16px;
+        padding: 42px 15px;
     }
 
     .apply_content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .radio-label {
         padding-right: 20px;
         font-size: 20px;
         display: inline-block;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     label {
