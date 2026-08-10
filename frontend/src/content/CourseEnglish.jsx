@@ -13,15 +13,12 @@ function CourseEnglish() {
             <section className="lang_course_content">
                 <button onClick={backClick}>Back to Courses</button>
                 <h1>Learn English</h1>
-                <p>Course info stuff goes here</p>
                 <div className="lang_course_grid">
                     <div className="lang_course_flyer">
-                        <h2>See this amazing flyer of people learning!</h2>
-                        <p>image goes here and lorem ipsum</p>
+                        <img src="/VCLC_English DL Flyer_Page_1.jpg" alt="amazing flyer of people learning!"></img>
                     </div>
                     <div className="lang_course_flyer">
-                        <h2>See another amazing flying of people talking!</h2>
-                        <p>image goes here and lorem ipsum</p>
+                        <img src="/VCLC_English DL Flyer_Page_2.jpg" alt="another amazing flyer!"/>
                     </div>
                 </div>
             </section>
