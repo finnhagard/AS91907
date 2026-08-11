@@ -3,14 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace backend.Models;
 
 // make sure all of this matches across the other stuff
-// field order follows the apply form on the feature/apply-page branch (currently)
-
-// max lengths have all been arbitrarily set
-//max lengths have been updated with absolute highest values - L
-//Just realised i probably should have done this on the apply branch but eh its fine
-//it'll update eventually
-
-//MIGRATIONS NOT UPDATED
+// field order follows the apply form
 
 public class Application {
     public int Id { get; set; }
@@ -18,7 +11,6 @@ public class Application {
     [MaxLength(50)] public string FirstName { get; set; } = string.Empty;
     [MaxLength(50)] public string LastName { get; set; } = string.Empty;
     [MaxLength(20)] public string? PreferredName { get; set; }
-    // nsns are always 20 digits right? - nope 10
     [MaxLength(10)] public string? Nsn { get; set; }
     [MaxLength(320)] public string Email { get; set; } = string.Empty;
     [MaxLength(25)] public string Phone { get; set; } = string.Empty;

@@ -61,7 +61,7 @@
 }
 
 .dropdown{
-    text-align: left;
+    text-align: center;
     font-size: 16px;
 }
 
@@ -73,7 +73,7 @@ input[type=radio]{
     padding-left: 5px;
     padding-right: 40px;
     padding-top: 10px;
-    font-size: 21px;
+    font-size: 18px;
 }
 
 input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus, textarea:focus {

@@ -2,7 +2,6 @@ import "./Courses.css";
 import {useNavigate} from "react-router-dom";
 
 function Courses() {
-    //TODO: Put button functions here
     const navigate = useNavigate();
     const englishClick = () => {
         navigate("/courses/english");

@@ -13,7 +13,7 @@
   builder.Services.AddDbContext<AppDbContext>(options =>
       options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
 
-  // allow the Vite (pronounced veet lucas - I KNOW) dev server to call the API during local development.
+  // allow the Vite dev server to call the API during local development.
   const string DevCorsPolicy = "DevCors";
   builder.Services.AddCors(options =>
       options.AddPolicy(DevCorsPolicy, policy =>

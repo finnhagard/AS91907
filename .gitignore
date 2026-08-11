@@ -36,7 +36,6 @@ appsettings.Development.json
 .idea/
 *.swp
 
-# i am looking at you lucas
 .DS_STORE
 Thumbs.db
 desktop.ini
