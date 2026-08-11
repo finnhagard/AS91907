@@ -14,14 +14,12 @@
 
 #footer_blurb{
     flex: 0.7;
-    padding-right: 425px;
+    padding-right: 220px;
+    width: 10px;
 }
 
 .footer_col {
     flex: 1;
-}
-#footer_blurb{
-    width: 10px;
 }
 
 .footer_col h3 {
