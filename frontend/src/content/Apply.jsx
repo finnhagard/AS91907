@@ -78,81 +78,86 @@ function Apply() {
                         <h2 className="left">Personal Details</h2>
                         <h3><span className="asterisk">*</span> indicates a required field.</h3>
 
-                        <div className="multi-column left">
-                            <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="firstName" name="firstName" size="54" required/>
-                            <FieldError name="firstName" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br />
+                                <input type="text" id="firstName" name="firstName" required />
+                                <FieldError name="firstName" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br />
+                                <input type="text" id="lastName" name="lastName" required />
+                                <FieldError name="lastName" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="lastName">Surname<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="lastName" name="lastName" size="54" required/>
-                            <FieldError name="lastName" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="preferredName">Preferred name</label><br />
+                                <input type="text" id="preferredName" name="preferredName" />
+                            </div>
+                            <div className="field">
+                                <label htmlFor="nsn">NSN (if known)</label><br />
+                                <input type="text" id="nsn" name="nsn" />
+                                <FieldError name="nsn" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column left">
-                            <label htmlFor="preferredName">Preferred name</label><br></br>
-                            <input type="text" id="preferredName" name="preferredName" size="54"/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="email">Email<span className="asterisk">*</span></label><br />
+                                <input type="email" id="email" name="email" required />
+                                <FieldError name="email" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="phone">Phone<span className="asterisk">*</span></label><br />
+                                <input type="tel" id="phone" name="phone" required />
+                                <FieldError name="phone" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="nsn">NSN (if known)</label><br></br>
-                            <input type="text" id="nsn" name="nsn" size="54" />
-                            <FieldError name="nsn" errors={errors}/>
-                        </div><br></br><br></br>
-
-                        <div className="multi-column left">
-                            <label htmlFor="email">Email<span className="asterisk">*</span></label><br></br>
-                            <input type="email" id="email" name="email" size="54" required/>
-                            <FieldError name="email" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="dateOfBirth">Date of birth<span className="asterisk">*</span></label><br />
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required />
+                                <FieldError name="dateOfBirth" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="gender">Gender<span className="asterisk">*</span></label><br />
+                                <select id="gender" name="gender" className="dropdown" required>
+                                    <option value="">--- Select ---</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <FieldError name="gender" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="phone">Phone<span className="asterisk">*</span></label><br></br>
-                            <input type="tel" id="phone" name="phone" size="54" required/>
-                            <FieldError name="phone" errors={errors}/>
-                        </div><br></br><br></br>
-
-                        <div className="multi-column left">
-                            <label htmlFor="dateOfBirth">Date of birth<span className="asterisk">*</span></label><br></br>
-                            <input type="date" id="dateOfBirth" name="dateOfBirth" className="dropdown" required/>
-                            <FieldError name="dateOfBirth" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column">
-                            <label htmlFor="gender">Gender<span className="asterisk">*</span></label><br></br>
-                            <select id="gender" name="gender" className="dropdown" required>
-                                <option value="">--- Select ---</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <FieldError name="gender" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column left">
-                          <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br></br>
-                          <input type="text" id="currentHighSchool" name="currentHighSchool" size="54" required/>
-                          <FieldError name="currentHighSchool" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column">
-                            <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br></br>
-                            <select id="yearLevel" name="yearLevel" className="dropdown" required>
-                                <option value="">--- Select ---</option>
-                                <option value="year9">Year 9</option>
-                                <option value="year10">Year 10</option>
-                                <option value="year11">Year 11</option>
-                                <option value="year12">Year 12</option>
-                                <option value="year13">Year 13</option>
-                            </select>
-                            <FieldError name="yearLevel" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="currentHighSchool">Current high school<span className="asterisk">*</span></label><br />
+                                <input type="text" id="currentHighSchool" name="currentHighSchool" required />
+                                <FieldError name="currentHighSchool" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="yearLevel">Year level<span className="asterisk">*</span></label><br />
+                                <select id="yearLevel" name="yearLevel" className="dropdown" required>
+                                    <option value="">--- Select ---</option>
+                                    <option value="year9">Year 9</option>
+                                    <option value="year10">Year 10</option>
+                                    <option value="year11">Year 11</option>
+                                    <option value="year12">Year 12</option>
+                                    <option value="year13">Year 13</option>
+                                </select>
+                                <FieldError name="yearLevel" errors={errors}/>
+                            </div>
                         </div>
 
 
-                        <h2 className="left">Course Details</h2>
+                        <h2>Course Details</h2>
 
-                        <div className="left">
+                        <div className="field">
                             <fieldset className="radio-group">
                                 <legend>Course<span className="asterisk">*</span></legend>
                                 <div className="coursesdiv">
@@ -163,10 +168,10 @@ function Apply() {
                                 </div>
                                 <FieldError name="course" errors={errors}/>
                             </fieldset>
-                        </div><br/>
+                        </div>
 
-                        <div className="left">
-                            <label htmlFor="preferredTime">Preferred time<span className="asterisk">*</span></label><br></br>
+                        <div className="field">
+                            <label htmlFor="preferredTime">Preferred time<span className="asterisk">*</span></label><br />
                             <select id="preferredTime" name="preferredTime" className="dropdown" required>
                                 <option value="">--- Select ---</option>
                                 <option value="tuesday-pm">Tuesday afternoon</option>
@@ -176,97 +181,103 @@ function Apply() {
                             <FieldError name="preferredTime" errors={errors}/>
                         </div>
 
-                        <div>
-                            <h2 className="left">Address</h2>
+                        <h2>Address</h2>
 
-                            <div className="left">
-                                <label htmlFor="address">Address<span className="asterisk">*</span></label><br></br>
-                                <input type="text" id="address" name="address" required/>
-                                <FieldError name="address" errors={errors}/>
-                            </div><br/><br/>
+                        <div className="field">
+                            <label htmlFor="address">Address<span className="asterisk">*</span></label><br />
+                            <input type="text" id="address" name="address" required />
+                            <FieldError name="address" errors={errors}/>
+                        </div>
 
-                            <div className="multi-column left">
-                                <label htmlFor="suburb">Suburb</label><br></br>
-                                <input type="text" id="suburb" name="suburb" size="54"/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="suburb">Suburb</label><br />
+                                <input type="text" id="suburb" name="suburb" />
                             </div>
-
-                            <div className="multi-column">
-                                <label htmlFor="city">City<span className="asterisk">*</span></label><br></br>
-                                <input type="text" id="city" name="city" size="54" required/>
+                            <div className="field">
+                                <label htmlFor="city">City<span className="asterisk">*</span></label><br />
+                                <input type="text" id="city" name="city" required />
                                 <FieldError name="city" errors={errors}/>
                             </div>
+                        </div>
 
-                            <div className="multi-column left">
-                                <label htmlFor="postcode">Post Code</label><br></br>
-                                <input type="text" id="postcode" name="postcode" size="54"/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="postcode">Post Code</label><br />
+                                <input type="text" id="postcode" name="postcode" />
                             </div>
-
-                            <div className="multi-column">
-                                <label htmlFor="country">Country<span className="asterisk">*</span></label><br></br>
-                                <input type="text" id="country" name="country" size="54" required/>
+                            <div className="field">
+                                <label htmlFor="country">Country<span className="asterisk">*</span></label><br />
+                                <input type="text" id="country" name="country" required />
                                 <FieldError name="country" errors={errors}/>
                             </div>
                         </div>
 
 
-                        <h2 className="left">Emergency Contact Details</h2>
+                        <h2>Emergency Contact Details</h2>
 
-                        <div className="multi-column left">
-                            <label htmlFor="emergencyContactName">Full name<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="emergencyContactName" name="emergencyContactName" size="54" required/>
-                            <FieldError name="emergencyContactName" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="emergencyContactName">Full name<span className="asterisk">*</span></label><br />
+                                <input type="text" id="emergencyContactName" name="emergencyContactName" required />
+                                <FieldError name="emergencyContactName" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="emergencyContactRelationship">Relationship to you<span className="asterisk">*</span></label><br />
+                                <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" required />
+                                <FieldError name="emergencyContactRelationship" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="emergencyContactRelationship">Relationship to you<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="emergencyContactRelationship" name="emergencyContactRelationship" size="54" required/>
-                            <FieldError name="emergencyContactRelationship" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column left">
-                            <label htmlFor="emergencyContactEmail">Email<span className="asterisk">*</span></label><br></br>
-                            <input type="email" id="emergencyContactEmail" name="emergencyContactEmail" size="54" required/>
-                            <FieldError name="emergencyContactEmail" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column">
-                            <label htmlFor="emergencyContactPhone">Phone<span className="asterisk">*</span></label><br></br>
-                            <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" size="54" required/>
-                            <FieldError name="emergencyContactPhone" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="emergencyContactEmail">Email<span className="asterisk">*</span></label><br />
+                                <input type="email" id="emergencyContactEmail" name="emergencyContactEmail" required />
+                                <FieldError name="emergencyContactEmail" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="emergencyContactPhone">Phone<span className="asterisk">*</span></label><br />
+                                <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" required />
+                                <FieldError name="emergencyContactPhone" errors={errors}/>
+                            </div>
                         </div>
 
 
-                        <h2 className="left">Next of Kin</h2>
+                        <h2>Next of Kin</h2>
 
-                        <div className="multi-column left">
-                            <label htmlFor="nextOfKinName">Full name<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="nextOfKinName" name="nextOfKinName" size="54" required/>
-                            <FieldError name="nextOfKinName" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="nextOfKinName">Full name<span className="asterisk">*</span></label><br />
+                                <input type="text" id="nextOfKinName" name="nextOfKinName" required />
+                                <FieldError name="nextOfKinName" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="nextOfKinRelationship">Relationship to you<span className="asterisk">*</span></label><br />
+                                <input type="text" id="nextOfKinRelationship" name="nextOfKinRelationship" required />
+                                <FieldError name="nextOfKinRelationship" errors={errors}/>
+                            </div>
                         </div>
 
-                        <div className="multi-column">
-                            <label htmlFor="nextOfKinRelationship">Relationship to you<span className="asterisk">*</span></label><br></br>
-                            <input type="text" id="nextOfKinRelationship" name="nextOfKinRelationship" size="54" required/>
-                            <FieldError name="nextOfKinRelationship" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column left">
-                            <label htmlFor="nextOfKinEmail">Email<span className="asterisk">*</span></label><br></br>
-                            <input type="email" id="nextOfKinEmail" name="nextOfKinEmail" size="54" required/>
-                            <FieldError name="nextOfKinEmail" errors={errors}/>
-                        </div>
-
-                        <div className="multi-column">
-                            <label htmlFor="nextOfKinPhone">Phone<span className="asterisk">*</span></label><br></br>
-                            <input type="tel" id="nextOfKinPhone" name="nextOfKinPhone" size="54" required/>
-                            <FieldError name="nextOfKinPhone" errors={errors}/>
+                        <div className="row">
+                            <div className="field">
+                                <label htmlFor="nextOfKinEmail">Email<span className="asterisk">*</span></label><br />
+                                <input type="email" id="nextOfKinEmail" name="nextOfKinEmail" required />
+                                <FieldError name="nextOfKinEmail" errors={errors}/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="nextOfKinPhone">Phone<span className="asterisk">*</span></label><br />
+                                <input type="tel" id="nextOfKinPhone" name="nextOfKinPhone" required />
+                                <FieldError name="nextOfKinPhone" errors={errors}/>
+                            </div>
                         </div>
 
                         {status === "error" && (
                             <p className="form-status error" role="alert">{message}</p>
                         )}
 
-                        <input type="submit"  value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
+                        <div className="submit-container">
+                            <input type="submit" value={submitting ? "Submitting..." : "Submit"} className="submit-button" disabled={submitting}/>
+                        </div>
                     </form>
                 </div>
             </section>

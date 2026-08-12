@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace backend.Models;
 
 // make sure all of this matches across the other stuff
-// field order follows the enquiry form on the feature/enquiry-page branch (currently)
-
-//MIGRATIONS NOT ADDED
+// field order follows the enquiry form
 
 public class Enquiry {
     public int Id { get; set; }
