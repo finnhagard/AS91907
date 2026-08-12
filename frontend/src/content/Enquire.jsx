@@ -89,12 +89,14 @@ function Enquire() {
             <section className="enquire_content">
                 <h1>Enquire</h1>
 
+
                 {status === "success" && (
                     <p className="form-status success" role="status">{message}</p>
                 )}
 
                 <div className="form">
                     <form onSubmit={handleSubmit}>
+                        <h3><span className="asterisk">*</span> indicates a required field.</h3>
                         <div className="row">
                             <div className="field">
                                 <label htmlFor="firstName">Given name(s)<span className="asterisk">*</span></label><br />
